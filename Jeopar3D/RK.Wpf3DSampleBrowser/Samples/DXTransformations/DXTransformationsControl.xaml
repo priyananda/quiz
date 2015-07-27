@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="RK.Wpf3DSampleBrowser.Samples.DXTransformations.DXTransformationsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:gfx="http://www.rkoenig.eu/graphicsengine"
+             Name="TransformationsControl"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <gfx:Direct3D11Image Name="m_direct3DImage"
+                             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+                             UpdateOnRender="True"
+                             IsHitTestVisible="True" Focusable="True">
+        </gfx:Direct3D11Image>
+
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10" MaxWidth="670"
+                    HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Rotation Type:</Label>
+                <ComboBox SelectedItem="{Binding ElementName=TransformationsControl, Path=ObjectRotationType, Mode=TwoWay}"
+                          Margin="0, 2, 2, 2" Width="200">
+                    <ComboBox.Items>
+                        <gfx:SpacialTransformationType>ScalingTranslationHVAngles</gfx:SpacialTransformationType>
+                        <gfx:SpacialTransformationType>ScalingTranslationEulerAngles</gfx:SpacialTransformationType>
+                    </ComboBox.Items>
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Parameters for HV Rotations -->
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Horizontal:</Label>
+                <ScrollBar Value="{Binding ElementName=TransformationsControl, Path=ObjectHorizontalRotation, Mode=TwoWay}"
+                           Orientation="Horizontal" Width="400"
+                           Minimum="-5" Maximum="5"
+                           SmallChange="0.05" />
+                <TextBox Text="{Binding ElementName=TransformationsControl, Path=ObjectHorizontalRotation, Mode=TwoWay, StringFormat=F3}"
+                         Margin="10, 2, 2, 2"
+                         Width="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Vertical:</Label>
+                <ScrollBar Value="{Binding ElementName=TransformationsControl, Path=ObjectVerticalRotation, Mode=TwoWay}"
+                           Orientation="Horizontal" Width="400"
+                           Minimum="-5" Maximum="5"
+                           SmallChange="0.05" />
+                <TextBox Text="{Binding ElementName=TransformationsControl, Path=ObjectVerticalRotation, Mode=TwoWay, StringFormat=F3}"
+                         Margin="10, 2, 2, 2"
+                         Width="100" />
+            </StackPanel>
+
+            <!-- Parameters for Euler-Rotations -->
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Yaw:</Label>
+                <ScrollBar Value="{Binding ElementName=TransformationsControl, Path=ObjectYawRotation, Mode=TwoWay}"
+                           Orientation="Horizontal" Width="400"
+                           Minimum="-5" Maximum="5"
+                           SmallChange="0.05" />
+                <TextBox Text="{Binding ElementName=TransformationsControl, Path=ObjectYawRotation, Mode=TwoWay, StringFormat=F3}"
+                         Margin="10, 2, 2, 2"
+                         Width="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Pitch:</Label>
+                <ScrollBar Value="{Binding ElementName=TransformationsControl, Path=ObjectPitchRotation, Mode=TwoWay}"
+                           Orientation="Horizontal" Width="400"
+                           Minimum="-5" Maximum="5"
+                           SmallChange="0.05" />
+                <TextBox Text="{Binding ElementName=TransformationsControl, Path=ObjectPitchRotation, Mode=TwoWay, StringFormat=F3}"
+                         Margin="10, 2, 2, 2"
+                         Width="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5"
+                        Background="#77FFFFFF">
+                <Label Width="100">Roll:</Label>
+                <ScrollBar Value="{Binding ElementName=TransformationsControl, Path=ObjectRollRotation, Mode=TwoWay}"
+                           Orientation="Horizontal" Width="400"
+                           Minimum="-5" Maximum="5"
+                           SmallChange="0.05" />
+                <TextBox Text="{Binding ElementName=TransformationsControl, Path=ObjectRollRotation, Mode=TwoWay, StringFormat=F3}"
+                         Margin="10, 2, 2, 2"
+                         Width="100" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

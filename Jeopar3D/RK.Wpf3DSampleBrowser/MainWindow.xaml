@@ -1,0 +1,70 @@
+﻿<fluent:RibbonWindow x:Class="RK.Wpf3DSampleBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fluent="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:self="clr-namespace:RK.Wpf3DSampleBrowser"
+        Title="Jeopar3D" Height="350" Width="525"
+        WindowState="Maximized"
+        Icon="/Resources/Icon.ico">
+
+    <!-- Define needed resources -->
+    <fluent:RibbonWindow.Resources>
+        <DataTemplate x:Key="SampleButtonTemplate"
+                      DataType="self:SampleInformation">
+            <fluent:Button Header="{Binding Path=DisplayName}"
+                           Command="{Binding Path=ApplySample}"
+                           CommandParameter="{Binding}">
+                <fluent:Button.LargeIcon>
+                    <Image Source="{Binding Path=ImageUrl}" />
+                </fluent:Button.LargeIcon>
+            </fluent:Button>
+        </DataTemplate>
+    </fluent:RibbonWindow.Resources>
+
+    <!-- Define main data context -->
+    <fluent:RibbonWindow.DataContext>
+        <self:MainWindowSource />
+    </fluent:RibbonWindow.DataContext>
+
+    <!-- Define UI -->
+    <DockPanel LastChildFill="True">
+        <fluent:Ribbon DockPanel.Dock="Top"
+                       IsAutomaticCollapseEnabled="False"
+                       IsQuickAccessToolBarVisible="False">
+            <fluent:RibbonTabItem Header="Teams">
+                <fluent:RibbonGroupBox Header="Team 1">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore1" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="Team 2">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore2" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="Team 3">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore3" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="Team 4">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore4" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="Team 5">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore5" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="Team 6">
+                    <fluent:RibbonToolBar>
+                        <fluent:Spinner x:Name="teamScore6" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
+                    </fluent:RibbonToolBar>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+        </fluent:Ribbon>
+
+        <ContentControl Content="{Binding Path=SelectedControl}"/>
+    </DockPanel>
+</fluent:RibbonWindow>

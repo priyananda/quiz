@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE138CC6-5B8E-408E-B5DB-863AE619ABA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shenoy.Question</RootNamespace>
+    <AssemblyName>Shenoy.Question</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\QuestionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\Clue.cs" />
+    <Compile Include="Model\ClueSet.cs" />
+    <Compile Include="Model\Common.cs" />
+    <Compile Include="Model\Concept.cs" />
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\ConnectQuestion.cs" />
+    <Compile Include="Model\LongListQuestion.cs" />
+    <Compile Include="Model\ObjectWithSlide.cs" />
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\SimpleQuestion.cs" />
+    <Compile Include="Model\SlideManager.cs" />
+    <Compile Include="Model\StagedConnectQuestion.cs" />
+    <Compile Include="Model\Team.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\IQuestionUIExtension.cs" />
+    <Compile Include="UI\QuestionWindow.xaml.cs">
+      <DependentUpon>QuestionWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Resources\Images\aclock.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsBottom.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsCenteredHorizontal.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsCenteredVertical.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsLeft.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsRight.png" />
+    <Resource Include="UI\Resources\Images\AlignObjectsTop.png" />
+    <Resource Include="UI\Resources\Images\BringForward.png" />
+    <Resource Include="UI\Resources\Images\BringToFront.png" />
+    <Resource Include="UI\Resources\Images\clock.png" />
+    <Resource Include="UI\Resources\Images\Copy.png" />
+    <Resource Include="UI\Resources\Images\correct.png" />
+    <Resource Include="UI\Resources\Images\Cut.png" />
+    <Resource Include="UI\Resources\Images\Delete.png" />
+    <Resource Include="UI\Resources\Images\DistributeObjectsHorizontal.png" />
+    <Resource Include="UI\Resources\Images\DistributeObjectsVertical.png" />
+    <Resource Include="UI\Resources\Images\exh.png" />
+    <Resource Include="UI\Resources\Images\GenericDocument.png" />
+    <Resource Include="UI\Resources\Images\Group.png" />
+    <Resource Include="UI\Resources\Images\icon-sort.png" />
+    <Resource Include="UI\Resources\Images\inorder.png" />
+    <Resource Include="UI\Resources\Images\limit.png" />
+    <Resource Include="UI\Resources\Images\next.png" />
+    <Resource Include="UI\Resources\Images\OpenFolder.png" />
+    <Resource Include="UI\Resources\Images\Paste.png" />
+    <Resource Include="UI\Resources\Images\PasteBig.png" />
+    <Resource Include="UI\Resources\Images\play.jpg" />
+    <Resource Include="UI\Resources\Images\prev.png" />
+    <Resource Include="UI\Resources\Images\Print.png" />
+    <Resource Include="UI\Resources\Images\satisfaction.png" />
+    <Resource Include="UI\Resources\Images\Save.png" />
+    <Resource Include="UI\Resources\Images\SendBackward.png" />
+    <Resource Include="UI\Resources\Images\SendToBack.png" />
+    <Resource Include="UI\Resources\Images\silly.png" />
+    <Resource Include="UI\Resources\Images\Ungroup.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

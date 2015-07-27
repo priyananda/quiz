@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="RK.Common.GraphicsEngine.Objects.Construction.Vertex">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="Binormal" Hidden="true" />
+      <Property Name="Color" Hidden="true" />
+      <Method Name="Copy" Hidden="true" />
+      <Field Name="m_animationData" Hidden="true" />
+      <Field Name="m_geoData" Hidden="true" />
+      <Field Name="m_textureData" Hidden="true" />
+      <Property Name="Normal" Hidden="true" />
+      <Property Name="Position" Hidden="true" />
+      <Property Name="Tangent" Hidden="true" />
+      <Property Name="TexCoord" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="Vertex" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAkgAIAAAAAAiAIAAACAAIEgAAAgAA=</HashCode>
+      <FileName>Objects\Construction\Vertex.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Animation" />
+      <Property Name="Geometry" />
+      <Property Name="Texture" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="RK.Common.GraphicsEngine.Objects.Construction.AnimationData">
+    <Position X="4.5" Y="2.5" Width="1.75" />
+    <Members>
+      <Field Name="m_boneIndex01" Hidden="true" />
+      <Field Name="m_boneIndex02" Hidden="true" />
+      <Field Name="m_boneIndex03" Hidden="true" />
+      <Field Name="m_boneIndex04" Hidden="true" />
+      <Field Name="m_boneWeight01" Hidden="true" />
+      <Field Name="m_boneWeight02" Hidden="true" />
+      <Field Name="m_boneWeight03" Hidden="true" />
+      <Field Name="m_boneWeight04" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAAAACBAAAAAIBAAAAAAEAAAAAAAAEAHAIAgAAAAAI=</HashCode>
+      <FileName>Objects\Construction\AnimationData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RK.Common.GraphicsEngine.Objects.Construction.GeometryData">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <Members>
+      <Method Name="Copy" Hidden="true" />
+      <Method Name="GeometryData" Hidden="true" />
+      <Field Name="m_binormal" Hidden="true" />
+      <Field Name="m_color" Hidden="true" />
+      <Field Name="m_normal" Hidden="true" />
+      <Field Name="m_position" Hidden="true" />
+      <Field Name="m_tangent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAgAAAAEAAAAiAIAAACAAAAgEgABAA=</HashCode>
+      <FileName>Objects\Construction\GeometryData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RK.Common.GraphicsEngine.Objects.Construction.TextureData">
+    <Position X="2.5" Y="2.5" Width="1.75" />
+    <Members>
+      <Method Name="Copy" Hidden="true" />
+      <Field Name="m_coordiante1" Hidden="true" />
+      <Field Name="m_coordinate2" Hidden="true" />
+      <Method Name="TextureData" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAwAAAQAAAAAAAAAAIBA=</HashCode>
+      <FileName>Objects\Construction\TextureData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
