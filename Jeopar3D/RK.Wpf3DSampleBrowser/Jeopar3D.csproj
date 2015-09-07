@@ -92,7 +92,6 @@
     </ApplicationDefinition>
     <Compile Include="Infrastructure.cs" />
     <Compile Include="MainWindowSource.cs" />
-    <Compile Include="Model\QuestionGrid.cs" />
     <Compile Include="SampleInformation.cs" />
     <Compile Include="Samples\DXDisplacementMapping\DXDisplacementMapping.xaml.cs">
       <DependentUpon>DXDisplacementMapping.xaml</DependentUpon>

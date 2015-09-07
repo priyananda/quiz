@@ -60,6 +60,8 @@
     <Compile Include="Model\Concept.cs" />
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\ConnectQuestion.cs" />
+    <Compile Include="Model\QuestionFactory.cs" />
+    <Compile Include="Model\Questions.cs" />
     <Compile Include="Model\LongListQuestion.cs" />
     <Compile Include="Model\ObjectWithSlide.cs" />
     <Compile Include="Model\Question.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Model\StagedConnectQuestion.cs" />
     <Compile Include="Model\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\QuestionGrid.cs" />
     <Compile Include="UI\IQuestionUIExtension.cs" />
     <Compile Include="UI\QuestionWindow.xaml.cs">
       <DependentUpon>QuestionWindow.xaml</DependentUpon>

@@ -16,7 +16,6 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RK.Wpf3DSampleBrowser.Samples.WpfSimpleCubes;
-using RK.Wpf3DSampleBrowser.Model;
 using Shenoy.Question.UI;
 using RK.Wpf3DSampleBrowser.UI;
 using Shenoy.Question.Model;
@@ -28,7 +27,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
     /// </summary>
     [Export(Infrastructure.SAMPLE_CONTRACT, typeof(UserControl))]
     [Sample(SampleType.WpfSample, 4, "pack://application:,,,/RK.Wpf3DSampleBrowser;component/Resources/Icons/UIInteraction32x32.png")]
-    [DisplayName("UI Interaction")]
+    [DisplayName("QuizPane")]
     public partial class WpfUIInteractionControl : UserControl
     {
         private QuestionGrid m_questionGrid = new QuestionGrid();
@@ -55,21 +54,39 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             material = new DiffuseMaterial(new SolidColorBrush(Colors.White));
             material.SetValue(Viewport2DVisual3D.IsVisualHostMaterialProperty, true);
             
-            //Build all cubesj
+            //Build all cubes
             const int xStart = -2, xZoom = +4;
             const int yStart = +1, yZoom = +4;
             const int zStart = -1, zZoom = -6;
-            for (int i = 0; i < QuestionGrid.NUM_TOPICS; ++i)
-                for (int j = 0; j < QuestionGrid.NUM_TYPES; ++j)
-                    for (int k = 0; k < QuestionGrid.NUM_POINTS; ++k)
+            for (int i = 0; i < m_questionGrid.NumTopics; ++i)
+            {
+                AddTopicHeader(
+                    new Point3D((xStart + i) * xZoom,(yStart + m_questionGrid.NumTypes) * yZoom, zStart * zZoom),
+                    material,
+                    "historylogo"
+                );
+                for (int j = 0; j < m_questionGrid.NumTypes; ++j)
+                {
+                    if (i == 0)
                     {
-                        int qid = m_questionGrid.GetQuestionId(i, j, k);
+                        AddTypeHeader(
+                            new Point3D((xStart - 1) * xZoom, (yStart + j) * yZoom, zStart * zZoom),
+                            material,
+                            m_questionGrid.TypeText(j),
+                            m_questionGrid.QColor(new QuestionKey(0, j, 0))
+                        );
+                    }
+
+                    for (int k = 0; k < m_questionGrid.NumPoints; ++k)
+                    {
+                        QuestionKey key = new QuestionKey(i, j, k);
+                        int qid = m_questionGrid.GetQuestionId(key);
                         if (qid < 0)
                             continue;
-                        var btn = new Button() { Content = m_questionGrid.QText(i, j, k) };
-                        btn.Background = m_questionGrid.QColor(i, j, k);
+                        var btn = new Button() { Content = m_questionGrid.QText(key) };
+                        btn.Background = m_questionGrid.QColor(key);
                         btn.Click += btn_Click;
-                        btn.FontFamily = new FontFamily("Cambria");
+                        btn.FontFamily = new FontFamily("Calibri");
                         btn.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
                         AddCube(
                             new Point3D((xStart + i) * xZoom, (yStart + j) * yZoom, (zStart + k) * zZoom),
@@ -79,6 +96,8 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
                         btn.Tag = qid;
                         Questions.Get(qid).Answered += OnQuestionAnswered;
                     }
+                }
+            }
 
             m_viewport.SetCameraPos(0);
 
@@ -128,14 +147,16 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             //Create the mesh geometry
             MeshGeometry3D triangleMesh = new MeshGeometry3D();
 
-            Point3D a = new Point3D(position.X - 1, position.Y - 1, position.Z + 1);
-            Point3D b = new Point3D(position.X + 1, position.Y - 1, position.Z + 1);
-            Point3D c = new Point3D(position.X + 1, position.Y - 1, position.Z - 1);
-            Point3D d = new Point3D(position.X - 1, position.Y - 1, position.Z - 1);
-            Point3D e = new Point3D(position.X - 1, position.Y + 1, position.Z + 1);
-            Point3D f = new Point3D(position.X + 1, position.Y + 1, position.Z + 1);
-            Point3D g = new Point3D(position.X + 1, position.Y + 1, position.Z - 1);
-            Point3D h = new Point3D(position.X - 1, position.Y + 1, position.Z - 1);
+            double dxHalfSize = 1;
+
+            Point3D a = new Point3D(position.X - dxHalfSize, position.Y - dxHalfSize, position.Z + dxHalfSize);
+            Point3D b = new Point3D(position.X + dxHalfSize, position.Y - dxHalfSize, position.Z + dxHalfSize);
+            Point3D c = new Point3D(position.X + dxHalfSize, position.Y - dxHalfSize, position.Z - dxHalfSize);
+            Point3D d = new Point3D(position.X - dxHalfSize, position.Y - dxHalfSize, position.Z - dxHalfSize);
+            Point3D e = new Point3D(position.X - dxHalfSize, position.Y + dxHalfSize, position.Z + dxHalfSize);
+            Point3D f = new Point3D(position.X + dxHalfSize, position.Y + dxHalfSize, position.Z + dxHalfSize);
+            Point3D g = new Point3D(position.X + dxHalfSize, position.Y + dxHalfSize, position.Z - dxHalfSize);
+            Point3D h = new Point3D(position.X - dxHalfSize, position.Y + dxHalfSize, position.Z - dxHalfSize);
             BuildRectangle(triangleMesh, a, b, f, e, new Vector3D(0, 0, 1));
             BuildRectangle(triangleMesh, b, c, g, f, new Vector3D(1, 0, 0));
             BuildRectangle(triangleMesh, c, d, h, g, new Vector3D(0, 0, -1));
@@ -152,6 +173,24 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             this.m_viewport.Visual3DChildren.Add(vp2DVisual3D);
 
             return vp2DVisual3D;
+        }
+
+        private void AddTypeHeader(Point3D point3D, Material material, string text, Brush backBrush)
+        {
+            text = text + " \u21d2";
+            var textBlock = new TextBlock() { Text = text };
+            textBlock.Background = backBrush;
+            textBlock.TextWrapping = TextWrapping.Wrap;
+            textBlock.TextAlignment = TextAlignment.Center;
+            textBlock.FontWeight = FontWeights.Bold;
+            AddCube(point3D, material, textBlock);
+        }
+
+        private void AddTopicHeader(Point3D point3D, Material material, string imageName)
+        {
+            var image = new Image();
+            image.Source = MediaManager.LoadImage("data\\" + imageName + ".png", true);
+            AddCube(point3D, material, image);
         }
 
         /// <summary>

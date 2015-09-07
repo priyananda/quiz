@@ -58,6 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Extern\SharpDX\Desktop\SharpDX.DXGI.dll</HintPath>
     </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -236,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\PixelShaders\SimpleDemoRendering.cso" />
+    <None Include="packages.config" />
     <None Include="Resources\PixelShaders\SimpleRendering.hlsl" />
     <EmbeddedResource Include="Resources\PixelShaders\SimpleRenderingTextured.cso" />
     <EmbeddedResource Include="Resources\PixelShaders\SimpleTransformedTexturedRendering.cso" />
@@ -249,6 +253,7 @@
     <Resource Include="Resources\Images\Circle_16x16.png" />
     <Resource Include="Resources\Images\RotateHorizontal_16x16.png" />
     <Resource Include="Resources\Images\RotateVertical_16x16.png" />
+	<Resource Include="Resources\Images\skybg.png" />
     <EmbeddedResource Include="Resources\PixelShaders\SimpleDemoRendering.hlsl" />
     <Content Include="Resources\PixelShaders\SimpleTransformedTexturedRendering.hlsl" />
     <Resource Include="Resources\Images\Search_16x16.png" />
@@ -279,16 +284,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T vs_4_0_level_9_1 /Fo "$(ProjectDir)Resources/VertexShaders/SimpleRendering.cso" "$(ProjectDir)Resources/VertexShaders/SimpleRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T vs_4_0_level_9_1 /Fo "$(ProjectDir)Resources/VertexShaders/SimpleRenderingInstanced.cso" "$(ProjectDir)Resources/VertexShaders/SimpleRenderingInstanced.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T vs_4_0 /Fo "$(ProjectDir)Resources/VertexShaders/SimpleDisplacedRendering.cso" "$(ProjectDir)Resources/VertexShaders/SimpleDisplacedRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T vs_4_0_level_9_1 /Fo "$(ProjectDir)Resources/VertexShaders/SimpleDemoRendering.cso" "$(ProjectDir)Resources/VertexShaders/SimpleDemoRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T ps_4_0_level_9_1 /Fo "$(ProjectDir)Resources/PixelShaders/SimpleRendering.cso" "$(ProjectDir)Resources/PixelShaders/SimpleRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T ps_4_0_level_9_1 /Fo "$(ProjectDir)Resources/PixelShaders/SimpleDemoRendering.cso" "$(ProjectDir)Resources/PixelShaders/SimpleDemoRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T ps_4_0_level_9_1 /Fo "$(ProjectDir)Resources/PixelShaders/SimpleRenderingTextured.cso" "$(ProjectDir)Resources/PixelShaders/SimpleRenderingTextured.hlsl"
-
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T vs_4_0_level_9_1 /Fo "$(ProjectDir)Resources/VertexShaders/SimpleTransformedTexturedRendering.cso" "$(ProjectDir)Resources/VertexShaders/SimpleTransformedTexturedRendering.hlsl"
-"%25DXSDK_DIR%25Utilities\bin\x64\FXC.exe" /T ps_4_0_level_9_1 /Fo "$(ProjectDir)Resources/PixelShaders/SimpleTransformedTexturedRendering.cso" "$(ProjectDir)Resources/PixelShaders/SimpleTransformedTexturedRendering.hlsl"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

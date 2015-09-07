@@ -16,8 +16,6 @@ namespace Shenoy.Question.Model
         {
             get
             {
-                if (m_id == 5)
-                    return "Aswath";
                 return String.Format("Team {0}", m_id + 1 );
             }
         }

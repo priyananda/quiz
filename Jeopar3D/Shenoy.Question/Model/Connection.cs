@@ -12,7 +12,7 @@ namespace Shenoy.Question.Model
             m_source = src;
             m_target = dest;
         }
-        public Question SourceQ { get { return m_source.Q; } }
+        public Question SourceQ { get { return m_source.Parent; } }
         public Question TargetQ { get { return m_target.Q; } }
         public Answer Source { get { return m_source; } }
         public Clue Target { get { return m_target; } }

@@ -10,11 +10,7 @@
              d:DesignHeight="300" d:DesignWidth="300"
              Name="ControlMain">
     <UserControl.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0.1,1">
-            <GradientStop Offset="0" Color="#FF4080FF" />
-            <GradientStop Offset="0.3" Color="#FF80B0FF" />
-            <GradientStop Offset="1" Color="#FF4372FB" />
-        </LinearGradientBrush>
+        <ImageBrush ImageSource="pack://application:,,,/RK.Common.GraphicsEngine;component/Resources/Images/skybg.png" Stretch="UniformToFill" />
     </UserControl.Background>
 
     <Grid>

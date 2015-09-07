@@ -11,7 +11,14 @@ namespace Shenoy.Question.Model
         {
             m_question = q;
         }
-        public Question Q { get { return m_question; } }
+        public Question Parent
+        {
+            get
+            {
+                return m_question;
+            }
+        }
+
         private Question m_question;
     }
 }

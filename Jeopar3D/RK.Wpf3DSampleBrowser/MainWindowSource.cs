@@ -63,11 +63,11 @@ namespace RK.Wpf3DSampleBrowser
                         m_wpfSamples.Add(sampleInfo);
                         break;
                 }
+                if (sampleInfo.DisplayName == "QuizPane")
+                    this.SelectedControl = actSampleControl;
             }
             m_wpfSamples.Sort();
             m_sharpDXSamples.Sort();
-
-            this.SelectedControl = m_sampleUserControls[8];
         }
 
         /// <summary>

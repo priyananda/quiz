@@ -16,7 +16,7 @@ namespace RK.Common.GraphicsEngine.Gui
         public static readonly DependencyProperty CameraHorizontalRotationProperty =
             DependencyProperty.Register("CameraHorizontalRotation", typeof(double), typeof(WpfModelViewerControl), new PropertyMetadata(45.0, OnCameraPropertyChanged));
         public static readonly DependencyProperty CameraMaximumDistanceProperty =
-            DependencyProperty.Register("CameraMaximumDistance", typeof(double), typeof(WpfModelViewerControl), new PropertyMetadata(20.0));
+            DependencyProperty.Register("CameraMaximumDistance", typeof(double), typeof(WpfModelViewerControl), new PropertyMetadata(100.0));
         public static readonly DependencyProperty CameraMinimumDistanceProperty =
             DependencyProperty.Register("CameraMinimumDistance", typeof(double), typeof(WpfModelViewerControl), new PropertyMetadata(2.0));
         public static readonly DependencyProperty CameraVerticalRotationProperty =
@@ -207,13 +207,13 @@ namespace RK.Common.GraphicsEngine.Gui
             Vector3D lookDirection = new Vector3(0f, 0f, -1f).ToWpfVector();
             lookDirection.Normalize();
 
-            Point3D camPosition = new Point3D(0f, 12f, 30f);
+            Point3D camPosition = new Point3D(0f, 50f, 30f);
 
             currentCamera.Position = camPosition;
             currentCamera.LookDirection = lookDirection;
 
             m_fIgnoreReset = true;
-            this.CameraDistance = (currentCamera.Position - new Point3D(0, 12, 0)).Length;
+            this.CameraDistance = (currentCamera.Position - new Point3D(0, 50, 0)).Length;
             this.CameraVerticalRotation = 0;
             this.CameraHorizontalRotation = 180;
             m_fIgnoreReset = false;
