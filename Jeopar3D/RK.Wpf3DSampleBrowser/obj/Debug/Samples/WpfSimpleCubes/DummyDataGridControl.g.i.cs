@@ -61,7 +61,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfSimpleCubes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Jeopar3D;component/samples/wpfsimplecubes/dummydatagridcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QuizzicsQube;component/samples/wpfsimplecubes/dummydatagridcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Samples\WpfSimpleCubes\DummyDataGridControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

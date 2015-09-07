@@ -204,22 +204,4 @@
 	</clueset>
     <answer slideid="76" />
   </question>
-  <question id="33" type="connect" e="1"> <!-- gl  Conn 10 -->
-	<clueset>
-	  <clue slideid="77" />
-	</clueset>
-    <answer slideid="78" />
-  </question>
-  <question id="34" type="stagedconnect"> <!-- Who Conn 30 -->
-    <clueset>
-      <clue slideid="79" />
-    </clueset>
-    <clueset>
-      <clue slideid="80" />
-    </clueset>
-	<clueset>
-      <clue slideid="81" />
-    </clueset>
-    <answer slideid="82" />
-  </question>
 </questions>

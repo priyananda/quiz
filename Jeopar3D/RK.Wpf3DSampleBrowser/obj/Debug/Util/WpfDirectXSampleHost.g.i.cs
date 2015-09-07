@@ -60,7 +60,7 @@ namespace RK.Wpf3DSampleBrowser.Util {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Jeopar3D;component/util/wpfdirectxsamplehost.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QuizzicsQube;component/util/wpfdirectxsamplehost.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Util\WpfDirectXSampleHost.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

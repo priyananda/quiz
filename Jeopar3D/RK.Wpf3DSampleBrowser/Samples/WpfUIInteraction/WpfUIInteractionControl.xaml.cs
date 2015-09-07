@@ -23,22 +23,23 @@ using Shenoy.Question.Model;
 namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
 {
     /// <summary>
-    /// Interaction logic for WpfUIInteractionControl.xaml
+    /// Interaction logic for QuizzicQubeSurface.xaml
     /// </summary>
     [Export(Infrastructure.SAMPLE_CONTRACT, typeof(UserControl))]
     [Sample(SampleType.WpfSample, 4, "pack://application:,,,/RK.Wpf3DSampleBrowser;component/Resources/Icons/UIInteraction32x32.png")]
     [DisplayName("QuizPane")]
-    public partial class WpfUIInteractionControl : UserControl
+    public partial class QuizzicQubeSurface : UserControl
     {
-        private QuestionGrid m_questionGrid = new QuestionGrid();
+        private QuizQube m_quizCube;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WpfUIInteractionControl" /> class.
         /// </summary>
-        public WpfUIInteractionControl()
+        public QuizzicQubeSurface()
         {
             InitializeComponent();
 
+            m_quizCube = new QuizQube();
             this.Loaded += OnLoaded;
         }
 
@@ -55,48 +56,28 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             material.SetValue(Viewport2DVisual3D.IsVisualHostMaterialProperty, true);
             
             //Build all cubes
-            const int xStart = -2, xZoom = +4;
-            const int yStart = +1, yZoom = +4;
-            const int zStart = -1, zZoom = -6;
-            for (int i = 0; i < m_questionGrid.NumTopics; ++i)
+            for (int i = 0; i < m_quizCube.NumTopics; ++i)
             {
-                AddTopicHeader(
-                    new Point3D((xStart + i) * xZoom,(yStart + m_questionGrid.NumTypes) * yZoom, zStart * zZoom),
-                    material,
-                    "historylogo"
-                );
-                for (int j = 0; j < m_questionGrid.NumTypes; ++j)
-                {
-                    if (i == 0)
-                    {
-                        AddTypeHeader(
-                            new Point3D((xStart - 1) * xZoom, (yStart + j) * yZoom, zStart * zZoom),
-                            material,
-                            m_questionGrid.TypeText(j),
-                            m_questionGrid.QColor(new QuestionKey(0, j, 0))
-                        );
-                    }
+                HeaderCube cube = m_quizCube.GetTopicHeaderCube(i);
+                AddTopicHeader(cube.Location, material, cube.BackgroundImage);
+            }
+            for (int j = 0; j < m_quizCube.NumTypes; ++j)
+            {
+                HeaderCube cube = m_quizCube.GetTypeHeaderCube(j);
+                AddTypeHeader(cube.Location, material, cube.Text, cube.BackgroundColor);
+            }
 
-                    for (int k = 0; k < m_questionGrid.NumPoints; ++k)
-                    {
-                        QuestionKey key = new QuestionKey(i, j, k);
-                        int qid = m_questionGrid.GetQuestionId(key);
-                        if (qid < 0)
-                            continue;
-                        var btn = new Button() { Content = m_questionGrid.QText(key) };
-                        btn.Background = m_questionGrid.QColor(key);
-                        btn.Click += btn_Click;
-                        btn.FontFamily = new FontFamily("Calibri");
-                        btn.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
-                        AddCube(
-                            new Point3D((xStart + i) * xZoom, (yStart + j) * yZoom, (zStart + k) * zZoom),
-                            material,
-                            btn
-                        );
-                        btn.Tag = qid;
-                        Questions.Get(qid).Answered += OnQuestionAnswered;
-                    }
-                }
+            for (int qid = 1; qid < Questions.Count; ++qid)
+            {
+                QuestionCube cube = m_quizCube.GetQuestionCube(qid);
+                var btn = new Button() { Content = cube.Text };
+                btn.Background = cube.Background;
+                btn.Click += btn_Click;
+                btn.FontFamily = new FontFamily("Segoe UI Light");
+                btn.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
+                AddCube(cube.Location, material, btn);
+                btn.Tag = qid;
+                Questions.Get(qid).Answered += OnQuestionAnswered;
             }
 
             m_viewport.SetCameraPos(0);
@@ -130,7 +111,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             foreach (Viewport2DVisual3D obj in m_viewport.Visual3DChildren)
             {
                 Button btn = obj.Visual as Button;
-                if ((int)btn.Tag == q)
+                if (btn != null && (int)btn.Tag == q)
                     nodesToDelete.Add(obj);
             }
             foreach(var obj in nodesToDelete)
@@ -180,16 +161,17 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             text = text + " \u21d2";
             var textBlock = new TextBlock() { Text = text };
             textBlock.Background = backBrush;
+            textBlock.FontFamily = new FontFamily("Cambria");
             textBlock.TextWrapping = TextWrapping.Wrap;
             textBlock.TextAlignment = TextAlignment.Center;
             textBlock.FontWeight = FontWeights.Bold;
             AddCube(point3D, material, textBlock);
         }
 
-        private void AddTopicHeader(Point3D point3D, Material material, string imageName)
+        private void AddTopicHeader(Point3D point3D, Material material, BitmapImage bgImage)
         {
             var image = new Image();
-            image.Source = MediaManager.LoadImage("data\\" + imageName + ".png", true);
+            image.Source = bgImage;
             AddCube(point3D, material, image);
         }
 

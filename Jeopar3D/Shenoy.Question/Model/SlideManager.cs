@@ -36,19 +36,25 @@ namespace Shenoy.Question.Model
 
         public static BitmapImage LoadImage(string name, bool fRel)
         {
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            if (fRel)
-            {
-                bi.UriSource = new Uri(name, UriKind.Relative);
+            try {
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                if (fRel)
+                {
+                    bi.UriSource = new Uri(name, UriKind.Relative);
+                }
+                else
+                {
+                    string imagePath = System.IO.Path.Combine(Environment.CurrentDirectory, name);
+                    bi.UriSource = new Uri(imagePath, UriKind.Absolute);
+                }
+                bi.EndInit();
+                return bi;
             }
-            else
+            catch
             {
-                string imagePath = System.IO.Path.Combine(Environment.CurrentDirectory, name);
-                bi.UriSource = new Uri(imagePath, UriKind.Absolute);
+                return UnknownImage;
             }
-            bi.EndInit();
-            return bi;
         }
 
         private static Dictionary<int, BitmapImage> m_slides = new Dictionary<int,BitmapImage>();

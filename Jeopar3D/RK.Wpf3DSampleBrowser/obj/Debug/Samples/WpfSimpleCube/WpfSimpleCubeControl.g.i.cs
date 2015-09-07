@@ -60,7 +60,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfSimpleCube {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Jeopar3D;component/samples/wpfsimplecube/wpfsimplecubecontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QuizzicsQube;component/samples/wpfsimplecube/wpfsimplecubecontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Samples\WpfSimpleCube\WpfSimpleCubeControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

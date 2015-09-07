@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:self="clr-namespace:RK.Wpf3DSampleBrowser"
-        Title="Jeopar3D" Height="350" Width="525"
+        Title="Quizzics Qube" Height="350" Width="525"
         WindowState="Maximized"
         Icon="/Resources/Icon.ico">
 
@@ -32,32 +32,32 @@
                        IsAutomaticCollapseEnabled="False"
                        IsQuickAccessToolBarVisible="False">
             <fluent:RibbonTabItem Header="Teams">
-                <fluent:RibbonGroupBox Header="Team 1">
+                <fluent:RibbonGroupBox Header="Team 1" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore1" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Team 2">
+                <fluent:RibbonGroupBox Header="Team 2" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore2" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Team 3">
+                <fluent:RibbonGroupBox Header="Team 3" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore3" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Team 4">
+                <fluent:RibbonGroupBox Header="Team 4" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore4" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Team 5">
+                <fluent:RibbonGroupBox Header="Team 5" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore5" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Team 6">
+                <fluent:RibbonGroupBox Header="Team 6" FontSize="24">
                     <fluent:RibbonToolBar>
                         <fluent:Spinner x:Name="teamScore6" Width="100" Increment="5" Format="F0" Minimum="-1000" Maximum="1000" ValueChanged="OnValueChanged"/>
                     </fluent:RibbonToolBar>

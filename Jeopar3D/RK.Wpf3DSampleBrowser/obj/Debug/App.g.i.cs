@@ -58,7 +58,7 @@ namespace RK.Wpf3DSampleBrowser {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/Jeopar3D;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QuizzicsQube;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
