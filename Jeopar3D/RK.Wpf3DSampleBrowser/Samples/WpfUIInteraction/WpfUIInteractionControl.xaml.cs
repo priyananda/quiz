@@ -67,7 +67,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
                 AddTypeHeader(cube.Location, material, cube.Text, cube.BackgroundColor);
             }
 
-            for (int qid = 1; qid < Questions.Count; ++qid)
+            for (int qid = 1; qid < Questions.Count - 1; ++qid)
             {
                 QuestionCube cube = m_quizCube.GetQuestionCube(qid);
                 var btn = new Button() { Content = cube.Text };
@@ -79,6 +79,8 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
                 btn.Tag = qid;
                 Questions.Get(qid).Answered += OnQuestionAnswered;
             }
+
+            AddMegaConnect(material);
 
             m_viewport.SetCameraPos(0);
 
@@ -128,7 +130,7 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             //Create the mesh geometry
             MeshGeometry3D triangleMesh = new MeshGeometry3D();
 
-            double dxHalfSize = 1;
+            double dxHalfSize = 1.5;
 
             Point3D a = new Point3D(position.X - dxHalfSize, position.Y - dxHalfSize, position.Z + dxHalfSize);
             Point3D b = new Point3D(position.X + dxHalfSize, position.Y - dxHalfSize, position.Z + dxHalfSize);
@@ -173,6 +175,23 @@ namespace RK.Wpf3DSampleBrowser.Samples.WpfUIInteraction
             var image = new Image();
             image.Source = bgImage;
             AddCube(point3D, material, image);
+        }
+
+        private void AddMegaConnect(Material material)
+        {
+            QuestionCube cubeX = m_quizCube.GetQuestionCube(10);
+            QuestionCube cubeZ = m_quizCube.GetQuestionCube(12);
+            Point3D location = new Point3D(cubeX.Location.X, cubeX.Location.Y, cubeZ.Location.Z);
+
+            var btn = new Button() { Content = "?" };
+            btn.Background = Brushes.DarkOrange;
+            btn.Click += btn_Click;
+            btn.FontFamily = new FontFamily("Segoe UI Light");
+            btn.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Center;
+            AddCube(location, material, btn);
+            int qid = Questions.Count - 1;
+            btn.Tag = qid;
+            Questions.Get(qid).Answered += OnQuestionAnswered;
         }
 
         /// <summary>

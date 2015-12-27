@@ -1,7 +1,8 @@
-﻿<Window x:Class="Shenoy.Question.UI.QuestionWindow"
+﻿<Window x:Class="Shenoy.Quiz.UI.QuestionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Displaying Question" Height="620" Width="980" FontFamily="Segoe UI">
+        xmlns:s="clr-namespace:Shenoy.Quiz.UI"
+        Title="Question" Height="680" Width="980" FontFamily="Segoe UI" ResizeMode="NoResize">
     <Grid Margin="0,0,0,0" Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -10,23 +11,23 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="480">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="600">
             <StackPanel Grid.Column="0" Margin="0,0,0,0" Name="cluesPanel" Height="Auto" >
             </StackPanel>
         </ScrollViewer>
         <GridSplitter Focusable="False" Width="2" Background="LightGray"
             VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
-        <Image Width="640" Height="480" Name="contentArea" Grid.Column="1" Margin="0,0,0,0"/>
+        <Image Width="800" Height="600" Name="contentArea" Grid.Column="1" Margin="0,0,0,0"/>
+        <s:QuestionControl x:Name="questionControl" Grid.Column="1"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <StackPanel Margin="0,5,0,3" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
             <Separator Margin="20,0,0,0"/>
-            <Button IsEnabled="False" Name="btnPrev" Click="btn_Click">
-                <Image Source="Resources\Images\prev.png"></Image>
+            <Button IsEnabled="False" Name="btnPrev" Click="OnNavigateButtonClicked">
+                <Image Source="..\Resources\prev.png"></Image>
             </Button>
             <Separator Margin="50,0,0,0" />
-            <Button IsEnabled="False"  Name="btnNext" Click="btn_Click">
-                <Image Source="Resources\Images\next.png"></Image>
+            <Button IsEnabled="False"  Name="btnNext" Click="OnNavigateButtonClicked">
+                <Image Source="..\Resources\next.png"></Image>
             </Button>
             <Separator Margin="20,0,0,0"/>
             <TextBlock Text="Question: " VerticalAlignment="Center" FontSize="18"></TextBlock>
@@ -35,21 +36,11 @@
             <TextBlock Text="Points: " VerticalAlignment="Center" FontSize="18"></TextBlock>
             <TextBlock Text="XXX" VerticalAlignment="Center" FontSize="18" Name="txtQPoints"></TextBlock>
             <Separator Margin="20,0,0,0"/>
-            <Image Source="Resources\Images\exh.png" Name="imgExh"></Image>
+            <Image Source="..\Resources\exh.png" Name="imgExh"></Image>
             <Separator Margin="20,0,0,0"/>
-            <Image Source="Resources\Images\limit.png" Name="imgLimited"></Image>
-            <Separator Margin="20,0,0,0"/>
-            <Image Source="Resources\Images\inorder.png" Name="imgInOrder"></Image>
-            <Separator Margin="20,0,0,0"/>
-            <Image Source="Resources\Images\silly.png" Name="imgSuperficial"></Image>
-
-            <Separator Margin="20,0,0,0" />
-            <Button Name="btnPlay" Click="btnPlay_Click">
-                <Image Source="Resources\Images\play.jpg"></Image>
-            </Button>
-
-            <Separator Margin="300,0,0,0"/>
-            <Image Source="Resources\Images\correct.png" Name="imgAnswer" MouseLeftButtonDown="OnAnswerClick"></Image>
+            <Image Source="..\Resources\inorder.png" Name="imgInOrder"></Image>
+            <Separator Margin="420,0,0,0"/>
+            <Image Source="..\Resources\correct.png" Name="imgAnswer" MouseLeftButtonDown="OnAnswerClick"></Image>
         </StackPanel>
     </Grid>
 </Window>

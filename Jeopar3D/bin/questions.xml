@@ -1,5 +1,5 @@
 <questions>
-  <question id="1" type="stagedconnect"> <!-- Tech Pz -->
+  <question id="1" type="stagedconnect"> 
     <clueset>
       <clue slideid="1" />
     </clueset>
@@ -8,200 +8,239 @@
     </clueset>
     <answer slideid="3" />
   </question>
-  <question id="2" type="stagedconnect"> <!-- GK Pz -->
+  <question id="2" type="stagedconnect"> 
     <clueset>
       <clue slideid="4" />
     </clueset>
     <clueset>
       <clue slideid="5" />
     </clueset>
-    <answer slideid="6" />
-  </question>
-  <question id="3" type="stagedconnect"> <!-- Pop Pz -->
-    <clueset>
-      <clue slideid="7" />
+	<clueset>
+      <clue slideid="6" />
     </clueset>
+    <answer slideid="7" />
+  </question>
+  <question id="3" type="stagedconnect"> 
     <clueset>
       <clue slideid="8" />
     </clueset>
-    <answer slideid="9" />
-  </question>
-  <question id="4" type="stagedconnect"> <!-- Global Pz -->
     <clueset>
-      <clue slideid="10" />
+      <clue slideid="9" />
     </clueset>
+    <answer slideid="10" />
+  </question>
+  <question id="4" type="stagedconnect"> 
     <clueset>
       <clue slideid="11" />
     </clueset>
-    <answer slideid="12" />
-  </question>
-  <question id="5" type="stagedconnect"> <!-- who Pz -->  
     <clueset>
-      <clue slideid="13" />
+      <clue slideid="12" />
     </clueset>
+    <answer slideid="13" />
+  </question>
+  <question id="5" type="stagedconnect">   
     <clueset>
       <clue slideid="14" />
+	  <clue slideid="15" />
     </clueset>
-    <answer slideid="15" />
+    <answer slideid="16" />
   </question>
   
-  <question id="6" type="simple"> <!-- Tech tldr 10 -->
-    <clue slideid="16" />
-    <answer slideid="17" />
+  <question id="6" type="stagedconnect">   
+    <clueset>
+      <clue slideid="17" />
+    </clueset>
+	<clueset>
+      <clue slideid="18" />
+    </clueset>
+	 <clueset>
+      <clue slideid="19" />
+    </clueset>
+    <answer slideid="20" />
   </question>
-  <question id="7" type="simple"> <!-- Tech tldr 20 -->
-    <clue slideid="18" />
-    <answer slideid="19" />
+  
+  <question id="7" type="stagedconnect">   
+    <clueset>
+      <clue slideid="21" />
+    </clueset>
+    <answer slideid="22" />
   </question>
-  <question id="8" type="simple"> <!-- Tech tldr 30 -->
-    <clue slideid="20" />
-    <answer slideid="21" />
-  </question>
- 
-  <question id="9" type="simple">  <!-- GK tldr 10 -->
-    <clue slideid="22" />
-    <answer slideid="23" />
-  </question>
-  <question id="10" type="simple"> <!-- GK tldr 20 -->
-    <clue slideid="24" />
+  
+   <question id="8" type="stagedconnect"> 
+    <clueset>
+      <clue slideid="23" />
+    </clueset>
+    <clueset>
+      <clue slideid="24" />
+    </clueset>
     <answer slideid="25" />
   </question>
-  <question id="11" type="simple"> <!-- GK tldr 30 -->
-    <clue slideid="26" />
-    <answer slideid="27" />
-  </question>
-
-  <question id="12" type="simple"> <!-- Pop tldr 10 -->
-    <clue slideid="28" />
-    <answer slideid="29" />
-  </question>
-  <question id="13" type="simple"> <!-- Pop tldr 20 -->
-    <clue slideid="30" />
-    <answer slideid="31" />
-  </question>
-  <question id="14" type="simple"> <!-- Pop tldr 30 -->
-    <clue slideid="32" />
-    <answer slideid="33" />
+  
+  <!--  Connects -->
+  <question id="9" type="longlist"> 
+    <clueset>
+	  <clue slideid="26" />
+	  <clue slideid="27" />
+	  <clue slideid="28" />
+	  <clue slideid="29" />
+	</clueset>
+    <answer slideid="30" />
   </question>
   
-  <question id="15" type="simple"> <!-- Gl tldr 10 -->
-    <clue slideid="34" />
+  <question id="10" type="simple" e="1">
+    <clue slideid="31" />
+    <answer slideid="32" />
+  </question>
+
+  <question id="11" type="longlist"> 
+    <clueset>
+	  <clue slideid="33" />
+	  <clue slideid="34" />
+	</clueset>
     <answer slideid="35" />
   </question>
-  <question id="16" type="simple"> <!-- Gl tldr 20 -->
+
+  <question id="12" type="simple" s="1" > 
     <clue slideid="36" />
     <answer slideid="37" />
   </question>
-  <question id="17" type="longlist"> <!-- Gl tldr 30 -->
-	<clueset>
-	  <clue slideid="38" />
-	</clueset>
+  
+  <question id="13" type="simple" e="1" s="1" y="1">
+    <clue slideid="38" />
     <answer slideid="39" />
   </question>
   
-  <question id="18" type="simple"> <!-- who tldr 10 -->
+  <question id="14" type="simple"> 
     <clue slideid="40" />
     <answer slideid="41" />
   </question>
-  <question id="19" type="simple" e="1" s="1"> <!-- who tldr 20 -->
+  
+  <question id="15" type="simple"> 
     <clue slideid="42" />
     <answer slideid="43" />
   </question>
-  <question id="20" type="simple"> <!-- who tldr 30 -->
+  
+  <question id="16" type="simple" y="1">
     <clue slideid="44" />
     <answer slideid="45" />
   </question>
-
-  <question id="21" type="simple"> <!-- tech parv 10 -->
-    <clue slideid="46">
-		<video src="data\\q21.mp4" x="140" y="100" w="480" h="360" />
-	</clue>
+  
+  <!-- PARV -->
+  
+  <question id="17" type="simple"> 
+    <clue slideid="46" />
     <answer slideid="47" />
   </question>
-  <question id="22" type="simple"> <!-- tech parv 20 -->
+  
+  <question id="18" type="simple"> 
     <clue slideid="48" />
     <answer slideid="49" />
   </question>
-
-  <question id="23" type="connect" e="1" s="1"> <!-- gk parv 10 -->
-	<clueset>
-	  <clue slideid="50" >
-	    <video src="data\\q23_1.mp3" x="340" y="100" w="50" h="50" />
-	  </clue>
-	  <clue slideid="51" >
-	    <video src="data\\q23_2.mp3" x="340" y="100" w="50" h="50" />
-	  </clue>
-	  <clue slideid="52" >
-	    <video src="data\\q23_3.mp3" x="340" y="100" w="50" h="50" />
-	  </clue>
-	</clueset>
-    <answer slideid="53" />
-  </question>
-  <question id="24" type="longlist"> <!-- gk parv 20 -->
-    <clueset>
-	  <clue slideid="54" />
-	  <clue slideid="55" />
-	</clueset>
-    <answer slideid="56" />
+  
+  <question id="19" type="simple"> 
+    <clue slideid="50" />
+    <answer slideid="51" />
   </question>
   
-  <question id="25" type="simple"> <!-- pop parv 10 -->
-    <clue slideid="57" >
-	  <video src="data\\q25.mp3" x="340" y="100" w="50" h="50" />
+  <question id="20" type="simple"> 
+    <clue slideid="52">
+		<video src="data\\q20.mp4" x="140" y="100" w="480" h="360" />
 	</clue>
-    <answer slideid="58" />
-  </question>
-  <question id="26" type="simple"> <!-- pop parv 20 -->
-    <clue slideid="59" />
-    <answer slideid="60" />
+    <answer slideid="53" />
   </question>
  
-  <question id="27" type="longlist"> <!-- gl parv 20 -->
-    <clueset>
-	  <clue slideid="61" />
-	  <clue slideid="62" />
-	  <clue slideid="63" />
-	</clueset>
-    <answer slideid="64" />
+  <question id="21" type="connect">
+   <clueset>
+	<clue slideid="54" />
+	 <clue slideid="55">
+		<video src="data\\q21.mp3" x="140" y="100" w="480" h="360" />
+	</clue>
+  </clueset>
+    <answer slideid="56" />
   </question>
 
-  <question id="28" type="simple"> <!-- who parv 10 -->
-    <clue slideid="65" >
-	  <video src="data\\q28.mp4" x="140" y="100" w="480" h="360" />
+ <question id="22" type="connect">
+   <clueset>
+    <clue slideid="57" />
+	<clue slideid="58" />
+  </clueset>
+    <answer slideid="59" />
+  </question>
+  
+  <question id="23" type="simple"> 
+    <clue slideid="60">
+		<video src="data\\q23.mp4" x="140" y="100" w="480" h="360" />
 	</clue>
+    <answer slideid="61" />
+  </question>
+
+  <question id="24" type="connect">
+   <clueset>
+    <clue slideid="62" />
+	<clue slideid="63" />
+  </clueset>
+    <answer slideid="64" />
+  </question>
+  
+  <!-- tldr -->
+  
+  <question id="25" type="simple"> 
+    <clue slideid="65" />
     <answer slideid="66" />
   </question>
-  <question id="29" type="longlist"> <!-- who parv 20 -->
-    <clueset>
-	  <clue slideid="67" />
-	</clueset>
-    <answer slideid="68"/>
+  
+  <question id="26" type="simple"> 
+    <clue slideid="67" />
+    <answer slideid="68" />
   </question>
  
-  <question id="30" type="stagedconnect"> <!-- Tech Conn 30 -->
-    <clueset>
-      <clue slideid="69"/>
-    </clueset>
-    <clueset>
-      <clue slideid="70" >
-	    <video src="data\\q30.mp3" x="340" y="100" w="50" h="50" />
-	  </clue>
-    </clueset>
-	<clueset>
-      <clue slideid="71" />
-    </clueset>
+  <question id="27" type="simple"> 
+    <clue slideid="69" />
+    <answer slideid="70" />
+  </question>
+
+  <question id="28" type="simple"> 
+    <clue slideid="71" />
     <answer slideid="72" />
   </question>
-  <question id="31" type="connect"  e="1" s="1"> <!-- gk  Conn 10 -->
-	<clueset>
-	  <clue slideid="73" />
-	</clueset>
-    <answer slideid="74" />
+  
+  <question id="29" type="connect">
+   <clueset>
+    <clue slideid="73" />
+	<clue slideid="74" />
+  </clueset>
+    <answer slideid="75" />
   </question>
-  <question id="32" type="connect"> <!-- pop  Conn 10 -->
+ 
+  <question id="30" type="simple"> 
+    <clue slideid="76" />
+    <answer slideid="77" />
+  </question>
+ 
+  <question id="31" type="simple"> 
+    <clue slideid="78" />
+    <answer slideid="79" />
+  </question>
+  
+   <question id="32" type="simple" s="1" > 
+    <clue slideid="80" />
+    <answer slideid="81" />
+  </question>
+  
+   <question id="33" type="stagedconnect"> 
+    <clueset>
+      <clue slideid="82" />
+	  <clue slideid="83" />
+    </clueset>
+    <clueset>
+      <clue slideid="84" />
+    </clueset>
 	<clueset>
-	  <clue slideid="75" />
-	</clueset>
-    <answer slideid="76" />
+      <clue slideid="85" />
+    </clueset>
+	<clueset>
+      <clue slideid="86" />
+    </clueset>
+    <answer slideid="87" />
   </question>
 </questions>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="Shenoy.Quiz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:Shenoy.Quiz.UI"
+        Title="SAQ 160 - Hello 2015!" Height="660" Width="680" ResizeMode="NoResize">
+    <Grid Name="theGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="125" />
+            <RowDefinition Height="125" />
+            <RowDefinition Height="125" />
+            <RowDefinition Height="125" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="115" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle Width="1040" Height="845" Grid.ColumnSpan="10" Grid.RowSpan="6" Name="backFillRect">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Resources/back.png" Stretch="Fill" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="6" Margin="0,0,5,0">
+            <Expander Header="Teams" Foreground="White" IsExpanded="True">
+                <Expander.Content>
+                    <StackPanel>
+                        <s:TeamDisplay TeamId="0"></s:TeamDisplay>
+                        <s:TeamDisplay TeamId="1"></s:TeamDisplay>
+                        <s:TeamDisplay TeamId="2"></s:TeamDisplay>
+                        <s:TeamDisplay TeamId="3"></s:TeamDisplay>
+                        <s:TeamDisplay TeamId="4"></s:TeamDisplay>
+                        <s:TeamDisplay TeamId="5"></s:TeamDisplay>
+                    </StackPanel>
+                </Expander.Content>
+            </Expander>
+            <Expander Header="MM Applied" Foreground="White" IsExpanded="False">
+                <Expander.Content>
+                    <ListBox Name="listboxMM">
+                    </ListBox>
+                </Expander.Content>
+            </Expander>
+        </StackPanel>
+
+        <GridSplitter Focusable="False" Width="2" Background="LightGray"
+            VerticalAlignment="Stretch" HorizontalAlignment="Right" Grid.Column="4" Grid.RowSpan="4" Grid.Row="1"/>
+    </Grid>
+</Window>

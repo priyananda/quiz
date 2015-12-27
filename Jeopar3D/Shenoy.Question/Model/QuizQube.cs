@@ -178,7 +178,7 @@ namespace Shenoy.Question.Model
             Brushes.BlanchedAlmond,
             Brushes.LightSkyBlue,
         };
-        const int xStart = -2, xZoom = +4;
+        const int xStart = -1, xZoom = +4;
         const int yStart = +1, yZoom = +4;
         const int zStart = -1, zZoom = -6;
     }
