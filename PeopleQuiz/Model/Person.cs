@@ -12,6 +12,7 @@
         Avinash,
         BooBoo,
         Gayathri,
+        Gautam,
         Hannibal,
         Harish,
         MaiDang,
@@ -25,9 +26,12 @@
         Prabirendra,
         Pranav,
         Priyananda,
+        Ruchi,
         RohitSud,
         Samarth,
+        Sankalp,
         Shashank,
+        Siddharth,
         SriramS,
         Suchitra,
         SudhirAP,
@@ -35,5 +39,31 @@
         Surinderjeet,
         Vashutosh,
         Yogesh
+    }
+
+    public enum GenderType
+    {
+        Male,
+        Female
+    }
+
+    public class Gender
+    {
+        public static GenderType Of(Person p)
+        {
+            switch(p)
+            {
+                case Person.Gayathri:
+                case Person.MaiDang:
+                case Person.Mythreyi:
+                case Person.Nandini:
+                case Person.Pallavi:
+                case Person.Ruchi:
+                case Person.Suchitra:
+                    return GenderType.Female;
+                default:
+                    return GenderType.Male;
+            }
+        }
     }
 }

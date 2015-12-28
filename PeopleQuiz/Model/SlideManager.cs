@@ -17,8 +17,7 @@ namespace Shenoy.Quiz.Model
         }
         public static BitmapImage GetPerson(Person person)
         {
-            Tuple<Person, bool> key = new Tuple<Person, bool>(person,
-                MetaModifierState.Current.IsEnabled(MetaModifiers.FrenchBeard));
+            Tuple<Person, bool> key = new Tuple<Person, bool>(person, false);
             string suffix = key.Item2 ? "_m" : "";
             if (!m_persons.ContainsKey(key))
                 m_persons[key] = LoadImage("people\\" + person + suffix + ".jpg", false);

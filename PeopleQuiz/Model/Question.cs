@@ -47,7 +47,7 @@ namespace Shenoy.Quiz.Model
             m_type = type;
             m_relatedQid = -1;
             m_fAnswered = false;
-            m_metamodifier = MetaModifiers.Max;
+            m_metamodifier = Celeb._Max;
         }
         public virtual void Load(XElement elem)
         {
@@ -71,8 +71,8 @@ namespace Shenoy.Quiz.Model
             if (elem.Attribute("related") != null)
                 m_relatedQid = Int32.Parse(elem.Attribute("related").Value);
             m_person = (Person)Enum.Parse(typeof(Person), elem.Attribute("person").Value);
-            if (elem.Attribute("mm") != null)
-                m_metamodifier = (MetaModifiers)Enum.Parse(typeof(MetaModifiers), elem.Attribute("mm").Value);
+            if (elem.Attribute("celeb") != null)
+                m_metamodifier = (Celeb)Enum.Parse(typeof(Celeb), elem.Attribute("celeb").Value);
             if (elem.Attribute("ryg") != null)
             {
                 switch (elem.Attribute("ryg").Value)
@@ -99,8 +99,8 @@ namespace Shenoy.Quiz.Model
             if (!m_fOpened)
             {
                 m_fOpened = true;
-                if (this.m_metamodifier != MetaModifiers.Max)
-                    MetaModifierState.Current.SetEnabled(this.m_metamodifier);
+                if (this.m_metamodifier != Celeb._Max)
+                    MetaModifierState.Current.Activate(this.m_metamodifier);
             }
         }
 
@@ -119,7 +119,7 @@ namespace Shenoy.Quiz.Model
         public bool Limited { get { return m_fLimited; } } 
         public String Name { get { return "" + m_id; } }
         public Person Person { get { return m_person; } }
-        public MetaModifiers MetaModifier { get { return m_metamodifier; } }
+        public Celeb MetaModifier { get { return m_metamodifier; } }
         public QuestionDifficulty Difficulty { get { return m_difficulty; } }
         
         public event Action<Question> Answered;
@@ -136,7 +136,7 @@ namespace Shenoy.Quiz.Model
         private bool m_fLimited;
         protected int m_Points = Constants.PointsForSimpleQ;
         private Person m_person;
-        private MetaModifiers m_metamodifier;
+        private Celeb m_metamodifier;
         private QuestionDifficulty m_difficulty;
 
         public List<ObjectWithSlide> Slides { get; set; }

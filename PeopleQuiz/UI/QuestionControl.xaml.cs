@@ -40,19 +40,19 @@ namespace Shenoy.Quiz.UI
                     case QuestionDifficulty.Green: imgDifficulty.Fill = Brushes.Green; break;
                 }
                 MetaModifierState.Current.OnStateChanged += SetProperties;
-                SetProperties(MetaModifierState.Current, MetaModifiers.Max);
+                //SetProperties(MetaModifierState.Current, MetaModifiers.Max);
             }
         }
 
-        private void SetProperties(MetaModifierState mmstate, MetaModifiers mm)
+        private void SetProperties(MetaModifierState mmstate, Celeb mm)
         {
-            bool fRoman = mmstate.IsEnabled(MetaModifiers.RomanTheme);
+            bool fRoman = false;// mmstate.IsEnabled(MetaModifiers.RomanTheme);
             this.lblQuestionNumber.Content = fRoman ?  RomanNumbers.Convert(m_qid) : m_qid.ToString();
             if (fRoman)
                 this.FontFamily = new FontFamily("Papyrus");
             this.imgPerson.Source = MediaManager.GetPerson(Questions.Get(m_qid).Person);
-            imgDifficulty.Visibility = mmstate.IsEnabled(MetaModifiers.RedYellowGreen) ?
-                Visibility.Visible : Visibility.Hidden;
+            //imgDifficulty.Visibility = mmstate.IsEnabled(MetaModifiers.RedYellowGreen) ?
+             //   Visibility.Visible : Visibility.Hidden;
         }
 
         public void SetMode(bool fEnabled, bool fGreyedOut)

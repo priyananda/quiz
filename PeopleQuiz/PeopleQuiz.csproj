@@ -60,7 +60,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AVNode.cs" />
-    <Compile Include="Model\MetaModifiers.cs" />
+    <Compile Include="Model\Celeb.cs" />
+    <Compile Include="Model\MetaModifier.cs" />
+    <Compile Include="Model\MetaModifierState.cs" />
     <Compile Include="Model\RomanNumbers.cs" />
     <Compile Include="UI\QuestionControl.xaml.cs">
       <DependentUpon>QuestionControl.xaml</DependentUpon>

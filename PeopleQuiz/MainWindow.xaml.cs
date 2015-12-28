@@ -31,18 +31,8 @@ namespace Shenoy.Quiz
             //}
         }
 
-        private void OnStateChanged(MetaModifierState mmstate, MetaModifiers mm)
+        private void OnStateChanged(MetaModifierState mmstate, Celeb mm)
         {
-            if (mm == MetaModifiers.RomanTheme)
-            {
-                var x = backFillRect.Fill;
-                var imageSource = new BitmapImage(new Uri("pack://application:,,,/PeopleQuiz;component/Resources/back_roman.jpg", UriKind.RelativeOrAbsolute));
-                backFillRect.Fill = new ImageBrush(imageSource);
-            }
-            else if (mm == MetaModifiers.DoublesDuration)
-            {
-                AddSecondSet();
-            }
             listboxMM.Items.Add(mm.ToString());
         }
 
