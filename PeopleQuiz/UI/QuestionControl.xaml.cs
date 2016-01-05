@@ -20,6 +20,7 @@ namespace Shenoy.Quiz.UI
     {
         public QuestionControl()
         {
+            m_quiz = Quiz.Model.Quiz.Current;
             InitializeComponent();
         }
 
@@ -29,8 +30,7 @@ namespace Shenoy.Quiz.UI
             set
             {
                 m_qid = value;
-                Question question = Questions.Get(m_qid);
-                this.lblPerson.Content = question.Person.ToString();
+                Question question = m_quiz.Questions.Get(m_qid);
                 if (!question.AllPlay)
                     imgIcon.Visibility = System.Windows.Visibility.Hidden;
                 switch (question.Difficulty)
@@ -39,20 +39,25 @@ namespace Shenoy.Quiz.UI
                     case QuestionDifficulty.Yellow: imgDifficulty.Fill = Brushes.Yellow; break;
                     case QuestionDifficulty.Green: imgDifficulty.Fill = Brushes.Green; break;
                 }
-                MetaModifierState.Current.OnStateChanged += SetProperties;
-                //SetProperties(MetaModifierState.Current, MetaModifiers.Max);
+                m_quiz.VProps.OnPropertyChange += SetProperties;
+                SetProperties(VisualProperties.ShowJayalalitha);
             }
         }
 
-        private void SetProperties(MetaModifierState mmstate, Celeb mm)
+        private void SetProperties(VisualProperties vp)
         {
-            bool fRoman = false;// mmstate.IsEnabled(MetaModifiers.RomanTheme);
-            this.lblQuestionNumber.Content = fRoman ?  RomanNumbers.Convert(m_qid) : m_qid.ToString();
-            if (fRoman)
-                this.FontFamily = new FontFamily("Papyrus");
-            this.imgPerson.Source = MediaManager.GetPerson(Questions.Get(m_qid).Person);
-            //imgDifficulty.Visibility = mmstate.IsEnabled(MetaModifiers.RedYellowGreen) ?
-             //   Visibility.Visible : Visibility.Hidden;
+            this.lblQuestionNumber.Content = m_qid.ToString();
+            if (m_quiz.VProps.ShowJayalalitha)
+                this.imgPerson.Source = MediaManager.GetPerson(Celeb.Jayalalitha);
+            else
+                this.imgPerson.Source = MediaManager.GetPerson(m_quiz.Questions.Get(m_qid).Person);
+            imgDifficulty.Visibility = m_quiz.VProps.ShowTrafficLights ?
+                Visibility.Visible : Visibility.Hidden;
+            if (m_quiz.VProps.ShowWhitifiedProfile)
+                this.lblPerson.Content = PersonTraits.GetWhitifiedName(m_quiz.Questions.Get(m_qid).Person);
+            else
+                this.lblPerson.Content = m_quiz.Questions.Get(m_qid).Person.ToString();
+
         }
 
         public void SetMode(bool fEnabled, bool fGreyedOut)
@@ -63,9 +68,10 @@ namespace Shenoy.Quiz.UI
 
         private void HandleClick(object sender, MouseButtonEventArgs e)
         {
-            new QuestionWindow(m_qid).ShowDialog();
+            new QuestionWindow(Model.Quiz.Current, m_qid).ShowDialog();
         }
 
         private int m_qid;
+        private Model.Quiz m_quiz;
     }
 }

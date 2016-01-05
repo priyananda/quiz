@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 namespace Shenoy.Quiz.Model
 {
-    class Answer : ObjectWithSlide
+    public class Answer : ObjectWithSlide
     {
         public static Answer Parse(Question q, XElement answerNode)
         {

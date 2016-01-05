@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Shenoy.Quiz.Model
 {
-    enum QuestionType
+    public enum QuestionType
     {
         Simple,
         Connect,
@@ -35,8 +35,9 @@ namespace Shenoy.Quiz.Model
             for (int i = 0; i < Constants.NumTeams; ++i)
                 m_writer.Write(" " + Teams.Get(i).Points);
             m_writer.Write(" Q");
-            for (int i = 1; i < Questions.Count; ++i)
-                m_writer.Write(Questions.Get(i).IsAnswered ? " 1" : " 0");
+            Questions qs = Quiz.Current.Questions;
+            for (int i = 1; i < qs.Count; ++i)
+                m_writer.Write(qs.Get(i).IsAnswered ? " 1" : " 0");
             m_writer.WriteLine("");
         }
         public static void RestoreState()
@@ -48,15 +49,16 @@ namespace Shenoy.Quiz.Model
             if (last != null)
             {
                 string[] split = last.Split(' ');
-                if ((split.Length == Constants.NumTeams + Questions.Count + 2) &&
+                Questions qs = Quiz.Current.Questions;
+                if ((split.Length == Constants.NumTeams + qs.Count + 2) &&
                     (split[0] == "T") && (split[Constants.NumTeams + 1] == "Q"))
                 {
                     for (int i = 0; i < Constants.NumTeams; ++i)
                         Teams.Get(i).AddPoints(Int32.Parse(split[i + 1]) - Teams.Get(i).Points);
 
-                    for (int i = 1; i < Questions.Count; ++i)
+                    for (int i = 1; i < qs.Count; ++i)
                         if (Int32.Parse(split[Constants.NumTeams + i + 2]) == 1)
-                            Questions.Get(i).AnswerQuestion();
+                            qs.Get(i).AnswerQuestion();
                 }
             }
         }

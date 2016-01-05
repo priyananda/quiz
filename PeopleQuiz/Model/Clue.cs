@@ -27,7 +27,7 @@ namespace Shenoy.Quiz.Model
             foreach(var clue in m_unresolvedConnections.Keys)
             {
                 int qid = m_unresolvedConnections[clue];
-                Connection conn = new Connection(Questions.Get(qid).Ans, clue);
+                Connection conn = new Connection(Quiz.Current.Questions.Get(qid).Ans, clue);
                 clue.m_connection = conn;
             }
             m_unresolvedConnections = null;

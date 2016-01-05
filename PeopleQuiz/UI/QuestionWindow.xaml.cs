@@ -19,13 +19,13 @@ namespace Shenoy.Quiz.UI
     /// </summary>
     public partial class QuestionWindow : Window
     {
-        public QuestionWindow(int questionid)
+        public QuestionWindow(Shenoy.Quiz.Model.Quiz quiz, int questionid)
         {
             InitializeComponent();
             this.Left = 40;
             this.Top = 0;
 
-            m_question = Questions.Get(questionid);
+            m_question = quiz.Questions.Get(questionid);
             m_question.Open();
 
             questionControl.QuestionId = questionid;

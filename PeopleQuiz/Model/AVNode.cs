@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Shenoy.Quiz.Model
 {
-    class AVNode
+    public class AVNode
     {
         public int X { get { return x; } }
         public int Y { get { return y; } }

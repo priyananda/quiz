@@ -16,7 +16,6 @@ namespace Shenoy.Quiz
     {
         public App()
         {
-            Questions.Load("qdata.xml");
         }
     }
 }

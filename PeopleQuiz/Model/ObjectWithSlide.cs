@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Shenoy.Quiz.Model
 {
-    class ObjectWithSlide
+    public class ObjectWithSlide
     {
         public ObjectWithSlide(int id)
         {

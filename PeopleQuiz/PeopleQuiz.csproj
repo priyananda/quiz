@@ -61,9 +61,17 @@
     </ApplicationDefinition>
     <Compile Include="Model\AVNode.cs" />
     <Compile Include="Model\Celeb.cs" />
+    <Compile Include="Model\MetaModifiers.cs" />
     <Compile Include="Model\MetaModifier.cs" />
-    <Compile Include="Model\MetaModifierState.cs" />
+    <Compile Include="Model\MetaModifierManager.cs" />
+    <Compile Include="Model\ModifiersImpl.cs" />
+    <Compile Include="Model\Questions.cs" />
+    <Compile Include="Model\Quiz.cs" />
     <Compile Include="Model\RomanNumbers.cs" />
+    <Compile Include="Model\VisualPropertyBag.cs" />
+    <Compile Include="UI\CelebControl.xaml.cs">
+      <DependentUpon>CelebControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\QuestionControl.xaml.cs">
       <DependentUpon>QuestionControl.xaml</DependentUpon>
     </Compile>
@@ -79,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\CelebControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UI\QuestionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_murica.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,9 +47,9 @@
         Female
     }
 
-    public class Gender
+    public class PersonTraits
     {
-        public static GenderType Of(Person p)
+        public static GenderType GenderOf(Person p)
         {
             switch(p)
             {
@@ -64,6 +64,50 @@
                 default:
                     return GenderType.Male;
             }
+        }
+
+        public static string GetWhitifiedName(Person p)
+        {
+            switch(p)
+            {
+                case Person.Adarsh: return "Adrian";
+                case Person.AjayBhat: return "AJ";
+                case Person.AmitB: return "";
+                case Person.Anirudh: return "Andy";
+                case Person.Antariksh: return "Ant";
+                case Person.Aswath: return "Ash";
+                case Person.Avinash: return "Avi";
+                case Person.BooBoo: return "";
+                case Person.Gayathri: return "Guy";
+                case Person.Gautam: return "";
+                case Person.Hannibal: return "";
+                case Person.Harish: return "Harry";
+                case Person.MaiDang: return "May";
+                case Person.Maitrey: return "";
+                case Person.Mythreyi: return "";
+                case Person.Michael: return "Michael";
+                case Person.Mihir: return "";
+                case Person.Nandini: return "";
+                case Person.Pallavi: return "";
+                case Person.Parth: return "";
+                case Person.Prabirendra: return "";
+                case Person.Pranav: return "";
+                case Person.Priyananda: return "Pete";
+                case Person.Ruchi: return "";
+                case Person.RohitSud: return "";
+                case Person.Samarth: return "";
+                case Person.Sankalp: return "";
+                case Person.Shashank: return "Shawshank";
+                case Person.Siddharth: return "Darth Sid";
+                case Person.SriramS: return "";
+                case Person.Suchitra: return "Sue";
+                case Person.SudhirAP: return "";
+                case Person.SuhasRao: return "";
+                case Person.Surinderjeet: return "";
+                case Person.Vashutosh: return "";
+                case Person.Yogesh: return "Yogi Berra";
+            }
+            return "Donald";
         }
     }
 }

@@ -6,29 +6,39 @@ using System.Threading.Tasks;
 
 namespace Shenoy.Quiz.Model
 {
+    public enum MetaModifierState
+    {
+        Dormant,
+        Active,
+        Finished
+    }
+
     abstract class MetaModifier
     {
         public virtual void Activate()
         {
-            m_fActivated = true;
+            if (m_state == MetaModifierState.Dormant)
+                m_state = MetaModifierState.Active;
         }
 
-        public virtual bool IsActive
+        public MetaModifierState State
         {
-            get
-            {
-                return m_fActivated;
-            }
+            get { return m_state; }
         }
 
-        public abstract void DoApply();
+        public VisualPropertyBag VProps
+        {
+            get { return Quiz.Current.VProps; }
+        }
 
-        protected bool m_fActivated = false;
+        public abstract void Apply();
+
+        protected MetaModifierState m_state = MetaModifierState.Dormant;
     }
 
-    class LimitedMetaModifier : MetaModifier
+    class TimeLimitedMetaModifier : MetaModifier
     {
-        LimitedMetaModifier(int limit)
+        public TimeLimitedMetaModifier(int limit)
         {
             m_limit = limit;
         }
@@ -39,21 +49,31 @@ namespace Shenoy.Quiz.Model
             m_counter = m_limit;
         }
 
-        public override bool IsActive
-        {
-            get
-            {
-                return base.IsActive && m_counter > 0;
-            }
-        }
-
-        public override void DoApply()
+        public override void Apply()
         {
             if (m_counter > 0)
                 m_counter--;
+            else if (m_counter == 0)
+                m_state = MetaModifierState.Finished;
         }
 
-        private int m_limit;
-        private int m_counter = 0;
+        protected int m_limit;
+        protected int m_counter = 0;
+    }
+
+    class SingleShotMetaModifier : TimeLimitedMetaModifier
+    {
+        public SingleShotMetaModifier() : base(1)
+        {
+           
+        }
+    }
+
+    class ReusableMetaModifier : MetaModifier
+    {
+        public override void Apply()
+        {
+            m_state = MetaModifierState.Dormant;
+        }
     }
 }

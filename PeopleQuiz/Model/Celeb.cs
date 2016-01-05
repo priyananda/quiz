@@ -8,15 +8,14 @@ namespace Shenoy.Quiz.Model
 {
     public enum Celeb
     {
-        ArvindKejriwal,
-        Jayalalitha,
-        DonaldTrump,
-        RahulGandhi,
-        KimKardashian,
-        AamirKhan,
-        BernieSanders,
-        GRRMartin,
-        Rajanikanth,
+        Kejriwal,    // Even Odd
+        Jayalalitha, // Face everywhere
+        Trump,       // 10 pts to top 2 teams, images everywhere
+        RahulG,      // Empower Women
+        Bernie,      // Socialism - each donate 10 points to another team
+        GRRM,        // 
+        Salman,  // Big Boss
+        KyloRen,     // The Dark Side
         _Max
     }
 }
