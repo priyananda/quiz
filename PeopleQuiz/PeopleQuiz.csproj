@@ -95,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\CelebRulesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UI\QuestionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\CelebRulesWindow.xaml.cs">
+      <DependentUpon>CelebRulesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\TeamDisplay.xaml.cs">
       <DependentUpon>TeamDisplay.xaml</DependentUpon>
@@ -175,6 +182,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\back_murica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_jaya.jpg" />
+    <Resource Include="Resources\back_math.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

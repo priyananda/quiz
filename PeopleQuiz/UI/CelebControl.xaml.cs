@@ -21,6 +21,19 @@ namespace Shenoy.Quiz.UI
         public CelebControl()
         {
             InitializeComponent();
+            Quiz.Model.Quiz.Current.VProps.OnPropertyChange += OnPropertyChange;
+        }
+
+        private void OnPropertyChange(VisualProperties obj)
+        {
+            bool fEnabled = true;
+            if (m_celeb == Celeb.GRRM || m_celeb == Celeb.KyloRen)
+                fEnabled = false;
+            else if (m_celeb == Celeb.Kejriwal)
+                fEnabled = !Quiz.Model.Quiz.Current.VProps.ShowOnlyWomen;
+            else if (m_celeb == Celeb.RahulG)
+                fEnabled = (Quiz.Model.Quiz.Current.VProps.EvenOddState == KejriwalState.ShowAll);
+            SetMode(fEnabled, !fEnabled);
         }
 
         public Celeb Person
@@ -31,6 +44,8 @@ namespace Shenoy.Quiz.UI
                 m_celeb = value;
                 this.lblPerson.Content = m_celeb.ToString();
                 this.imgPerson.Source = MediaManager.GetPerson(m_celeb);
+                if (m_celeb == Celeb.GRRM || m_celeb == Celeb.KyloRen)
+                    SetMode(false, true);
             }
         }
 
@@ -43,7 +58,10 @@ namespace Shenoy.Quiz.UI
         private void HandleClick(object sender, MouseButtonEventArgs e)
         {
             Model.Quiz.Current.MetaManager.Activate(m_celeb);
-            this.SetMode(false, true);
+            var grid = (this.Parent as Grid);
+            grid.Children.Remove(this);
+            Quiz.Model.Quiz.Current.VProps.OnPropertyChange -= OnPropertyChange;
+            new CelebRulesWindow(m_celeb).Show();
         }
 
         private Celeb m_celeb = Celeb._Max;

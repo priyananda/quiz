@@ -46,7 +46,10 @@ namespace Shenoy.Quiz.UI
 
         private void SetProperties(VisualProperties vp)
         {
-            this.lblQuestionNumber.Content = m_qid.ToString();
+            if (m_quiz.VProps.ShowMathMode)
+                this.lblQuestionNumber.Content = GreekNumbers.Convert(m_qid);
+            else
+                this.lblQuestionNumber.Content = m_qid.ToString();
             if (m_quiz.VProps.ShowJayalalitha)
                 this.imgPerson.Source = MediaManager.GetPerson(Celeb.Jayalalitha);
             else
@@ -68,7 +71,7 @@ namespace Shenoy.Quiz.UI
 
         private void HandleClick(object sender, MouseButtonEventArgs e)
         {
-            new QuestionWindow(Model.Quiz.Current, m_qid).ShowDialog();
+            new QuestionWindow(Model.Quiz.Current, m_qid).Show();
         }
 
         private int m_qid;

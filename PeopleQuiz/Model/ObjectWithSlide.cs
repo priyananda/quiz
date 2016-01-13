@@ -22,7 +22,7 @@ namespace Shenoy.Quiz.Model
             var videoNode = elem.Element("video");
             if (videoNode == null)
                 return;
-            m_avnode = AVNode.Parse(elem);
+            m_avnode = AVNode.Parse(videoNode);
         }
 
         private int m_slideid;

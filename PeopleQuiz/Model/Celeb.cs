@@ -13,8 +13,8 @@ namespace Shenoy.Quiz.Model
         Trump,       // 10 pts to top 2 teams, images everywhere
         RahulG,      // Empower Women
         Bernie,      // Socialism - each donate 10 points to another team
+        SalmanKhan,  // Math Mode
         GRRM,        // 
-        Salman,  // Big Boss
         KyloRen,     // The Dark Side
         _Max
     }

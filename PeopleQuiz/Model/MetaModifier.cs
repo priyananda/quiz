@@ -31,6 +31,15 @@ namespace Shenoy.Quiz.Model
             get { return Quiz.Current.VProps; }
         }
 
+        public void ForceFinish()
+        {
+            if (m_state == MetaModifierState.Active)
+            {
+                m_state = MetaModifierState.Finished;
+                Apply();
+            }
+        }
+
         public abstract void Apply();
 
         protected MetaModifierState m_state = MetaModifierState.Dormant;

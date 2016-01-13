@@ -45,4 +45,29 @@ namespace Shenoy.Quiz.Model
             return builder.ToString();
         }
     }
+
+    class GreekNumbers
+    {
+        public static String Convert(int num)
+        {
+            string ret = "";
+            if (num > 9)
+                ret += s_chars[num / 10];
+            return ret + s_chars[num % 10];
+        }
+
+        private static char[] s_chars =
+        {
+            (char)0x03b8, //0
+            (char)0x03c0, //1
+            (char)0x03bb, //2
+            (char)0x03a9, //3
+            (char)0x03b1, //4
+            (char)0x03b4, //5
+            (char)0x03b5, //6
+            (char)0x03bc, //7
+            (char)0x03c7, //8
+            (char)0x03c3, //9
+        };
+    }
 }

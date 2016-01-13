@@ -15,7 +15,8 @@ namespace Shenoy.Quiz.Model
         ShowJayalalitha,
         ShowOnlyWomen,
         ShowWhitifiedProfile,
-        ShowTrafficLights
+        ShowTrafficLights,
+        MathMode
     }
 
     public enum KejriwalState
@@ -75,6 +76,12 @@ namespace Shenoy.Quiz.Model
             set { m_fShowTrafficLights = value; FireEvent(VisualProperties.ShowTrafficLights); }
         }
 
+        public bool ShowMathMode
+        {
+            get { return m_fMathMode; }
+            set { m_fMathMode = value; FireEvent(VisualProperties.MathMode); }
+        }
+
         public event Action<VisualProperties> OnPropertyChange;
 
         private void FireEvent(VisualProperties vp)
@@ -91,5 +98,6 @@ namespace Shenoy.Quiz.Model
         private bool m_fShowOnlyWomen = false;
         private bool m_fShowWhitifiedProfile = false;
         private bool m_fShowTrafficLights = false;
+        private bool m_fMathMode = false;
     }
 }

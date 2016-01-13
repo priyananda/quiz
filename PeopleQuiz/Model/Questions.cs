@@ -61,8 +61,9 @@ namespace Shenoy.Quiz.Model
         public int CountInRange(int qidStart, int qidEnd, Predicate<Question> FCheck)
         {
             int c = 0;
-            foreach (var question in m_questions)
+            for(int qid = qidStart; qid <= qidEnd; ++qid )
             {
+                Question question = Get(qid);
                 if (question != null && FCheck(question))
                     ++c;
             }
@@ -72,6 +73,12 @@ namespace Shenoy.Quiz.Model
         {
             return CountInRange(FirstInSet, LastInSet,
                 (q) => (!q.IsAnswered && PersonTraits.GenderOf(q.Person) == GenderType.Female));
+        }
+
+        public int CountOpenEvenOdd(bool fEven)
+        {
+            return CountInRange(FirstInSet, LastInSet,
+                (q) => (!q.IsAnswered && (q.Id % 2 == (fEven ? 0 : 1))));
         }
 
         private void OnQuestionAnswered(Question question)

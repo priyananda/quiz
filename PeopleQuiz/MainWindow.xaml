@@ -36,7 +36,7 @@
         </Grid.ColumnDefinitions>
         <Rectangle Width="1540" Height="845" Grid.ColumnSpan="15" Grid.RowSpan="6" Name="backFillRect">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="Resources/back_murica.jpg" Stretch="Fill" />
+                <ImageBrush ImageSource="Resources/back_roman.jpg" Stretch="Fill" />
             </Rectangle.Fill>
         </Rectangle>
 
@@ -53,10 +53,13 @@
                     </StackPanel>
                 </Expander.Content>
             </Expander>
-            <Expander Header="MM Applied" Foreground="White" IsExpanded="False">
+            <Expander Header="Cheat Codes" Foreground="White" IsExpanded="False">
                 <Expander.Content>
-                    <ListBox Name="listboxMM">
-                    </ListBox>
+                    <StackPanel Orientation="Vertical">
+                        <Button Click="btnEAIS_Click" >EAIS</Button>
+                        <Button Click="btnFMMF_Click" >FMMF</Button>
+                        <Button Click="btnAdv_Click" >Adv</Button>
+                    </StackPanel>
                 </Expander.Content>
             </Expander>
         </StackPanel>

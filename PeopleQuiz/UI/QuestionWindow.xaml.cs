@@ -139,6 +139,7 @@ namespace Shenoy.Quiz.UI
                 video.Height = av.H;
                 video.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 video.VerticalAlignment = System.Windows.VerticalAlignment.Top;
+                video.Source = new Uri(av.Source, UriKind.Relative);
 
                 this.grid.Children.Add(video);
                 Grid.SetColumn(video, 1);

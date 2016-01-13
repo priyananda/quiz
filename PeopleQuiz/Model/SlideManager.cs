@@ -15,6 +15,14 @@ namespace Shenoy.Quiz.Model
                 m_slides[slideid] = LoadImage("data\\Slide" + slideid + ".png", false);
             return m_slides[slideid];
         }
+
+        public static BitmapImage GetCelebRuleSlide(Celeb celeb)
+        {
+            if (!m_celebSlides.ContainsKey(celeb))
+                m_celebSlides[celeb] = LoadImage("celebmm\\Slide" + ((int)celeb + 1) + ".png", false);
+            return m_celebSlides[celeb];
+        }
+
         public static BitmapImage GetPerson(Person person)
         {
             Tuple<Person, bool> key = new Tuple<Person, bool>(person, false);
@@ -68,6 +76,7 @@ namespace Shenoy.Quiz.Model
         private static Dictionary<int, BitmapImage> m_slides = new Dictionary<int,BitmapImage>();
         private static Dictionary<Tuple<Person, bool>, BitmapImage> m_persons = new Dictionary<Tuple<Person, bool>, BitmapImage>();
         private static Dictionary<Celeb, BitmapImage> m_celebs = new Dictionary<Celeb, BitmapImage>();
+        private static Dictionary<Celeb, BitmapImage> m_celebSlides = new Dictionary<Celeb, BitmapImage>();
         private static BitmapImage bmpUnknown = null;
     }
 }

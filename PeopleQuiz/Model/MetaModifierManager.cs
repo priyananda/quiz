@@ -15,6 +15,7 @@ namespace Shenoy.Quiz.Model
             m_celebModifiers[Celeb.Kejriwal] = new DoAKejriwal();
             m_celebModifiers[Celeb.Jayalalitha] = new DoAJayalalitha();
             m_celebModifiers[Celeb.RahulG] = new DoARahulGandhi();
+            m_celebModifiers[Celeb.SalmanKhan] = new DoASalKhan();
             quiz.Questions.QuestionAnswered += OnQuestionAnswered;
         }
 
@@ -28,6 +29,20 @@ namespace Shenoy.Quiz.Model
         {
             if (celeb != Celeb._Max && m_celebModifiers.ContainsKey(celeb))
                 DoActivate(m_celebModifiers[celeb]);
+        }
+
+        public void ForceFinishAll()
+        {
+            foreach (var modifier in m_fixedModifiers.Values)
+            {
+                if (modifier.State == MetaModifierState.Active)
+                    modifier.ForceFinish();
+            }
+            foreach (var modifier in m_celebModifiers.Values)
+            {
+                if (modifier.State == MetaModifierState.Active)
+                    modifier.ForceFinish();
+            }
         }
 
         private void DoActivate(MetaModifier metaModifier)

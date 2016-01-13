@@ -1,0 +1,350 @@
+<questions>
+	<question person="Pallavi" id="1" type="connect" ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="2"/>
+	</question>
+	<question person="Adarsh" id="2" type="connect"  ryg="Y" mm="Celeb">
+		<clueset>
+			<clue slideid="3"/>
+			<clue slideid="4">
+				<video src="data\q2.mp4" x="100" y="100" w="600" h="320" />
+			</clue>
+		</clueset>
+		<answer slideid="5" />
+	</question>
+	<question person="Priyananda" id="3" type="stagedconnect" ryg="Y" mm="ShowFirstSet">
+		<clueset>
+			<clue slideid="6"/>
+			<clue slideid="7"/>
+		</clueset>
+		<clueset>
+			<clue slideid="8"/>
+		</clueset>
+		<answer slideid="9" />
+	</question>
+	<question person="Shashank" id="4" type="connect" mm="DoublesDuration" ryg="G">
+		<clueset>
+			<clue slideid="10"/>
+			<clue slideid="11"/>
+		</clueset>
+		<answer slideid="12" />
+	</question>
+	<question person="Ruchi" id="5" type="connect" ryg="Y">
+		<clueset>
+			<clue slideid="13"/>
+		</clueset>
+		<answer slideid="14" />
+	</question>
+	<question person="Anirudh" id="6" type="connect" ryg="R" mm="Celeb">
+		<clueset>
+			<clue slideid="15"/>
+			<clue slideid="16"/>
+		</clueset>
+		<answer slideid="17" />
+	</question>
+	<question person="Priyananda" id="7" type="connect"  ryg="G" mm="ShowFirstSet">
+		<clueset>
+			<clue slideid="18"/>
+			<clue slideid="19"/>
+		</clueset>
+		<answer slideid="20" />
+	</question>
+	<question person="Samarth" id="8" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="21"/>
+		</clueset>
+		<answer slideid="22" />
+	</question>
+	<question person="Aswath" id="9" type="stagedconnect"  ryg="Y">
+		<clueset>
+			<clue slideid="23"/>
+			<clue slideid="24"/>
+		</clueset>
+		<clueset>
+			<clue slideid="25"/>
+		</clueset>
+		<clueset>
+			<clue slideid="26"/>
+			<clue slideid="27"/>
+		</clueset>
+		<clueset>
+			<clue slideid="28"/>
+		</clueset>
+		<clueset>
+			<clue slideid="29"/>
+		</clueset>
+		<answer slideid="30" />
+	</question>
+	<question person="Pranav" id="10" type="connect" mm="RedYellowGreen" ryg="G">
+		<clueset>
+			<clue slideid="31"/>
+			<clue slideid="32"/>
+		</clueset>
+		<answer slideid="33" />
+	</question>
+	<question person="Shashank" id="11" type="connect"  ryg="G" mm="DoublesDuration" >
+		<clueset>
+			<clue slideid="34"/>
+			<clue slideid="35"/>
+		</clueset>
+		<answer slideid="36" />
+	</question>
+	<question person="MaiDang" id="12" type="connect"  ryg="R" mm="Celeb">
+		<clueset>
+			<clue slideid="37"/>
+			<clue slideid="38"/>
+		</clueset>
+		<answer slideid="39" />
+	</question>
+	<question person="RohitSud" id="13" type="stagedconnect" ryg="R">
+		<clueset>
+			<clue slideid="40"/>
+		</clueset>
+		<clueset>
+			<clue slideid="41"/>
+		</clueset>
+		<answer slideid="42" />
+	</question>
+	<question person="Priyananda" id="14" type="longlist" mm="ShowFirstSet" ryg="Y">
+		<clueset>
+			<clue slideid="43"/>
+			<clue slideid="44"/>
+		</clueset>
+		<clueset>
+			<clue slideid="45"/>
+		</clueset>
+		<clueset>
+			<clue slideid="46"/>
+		</clueset>
+		<answer slideid="47" />
+	</question>
+	<question person="Nandini" id="15" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="48"/>
+		</clueset>
+		<answer slideid="49" />
+	</question>
+	<question person="Prabirendra" id="16" type="connect"  ryg="G">
+		<clueset>
+			<clue slideid="50"/>
+		</clueset>
+		<answer slideid="51" />
+	</question>
+	<question person="Maitrey" id="17" type="connect"  ryg="R" mm="Celeb">
+		<clueset>
+			<clue slideid="52"/>
+			<clue slideid="53"/>
+		</clueset>
+		<answer slideid="54" />
+	</question>
+	<question person="Parth" id="18" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="55"/>
+		</clueset>
+		<answer slideid="56" />
+	</question>
+	<question person="SudhirAP" id="19" type="longlist"  ryg="R">
+		<clueset>
+			<clue slideid="57"/>
+			<clue slideid="58"/>
+			<clue slideid="59"/>
+			<clue slideid="60"/>
+			<clue slideid="61"/>
+			<clue slideid="62"/>
+			<clue slideid="63"/>
+			<clue slideid="64"/>
+		</clueset>
+		<answer slideid="65" />
+	</question>
+	<question person="Gayathri" id="20" type="stagedconnect"  ryg="G">
+		<clueset>
+			<clue slideid="66"/>
+			<clue slideid="67"/>
+			<clue slideid="68"/>
+		</clueset>
+		<clueset>
+			<clue slideid="69"/>
+		</clueset>
+		<clueset>
+			<clue slideid="70"/>
+		</clueset>
+		<answer slideid="71" />
+	</question>
+	<question person="RohitSud" id="21" type="connect"  ryg="R">
+		<clueset>
+			<clue slideid="72"/>
+		</clueset>
+		<answer slideid="73" />
+	</question>
+	<question person="Harish" id="22" type="connect"  ryg="G">
+		<clueset>
+			<clue slideid="74"/>
+		</clueset>
+		<answer slideid="75" />
+	</question>
+	<question person="Suchitra" id="23" type="connect" ryg="R" mm="HalvesDuration" >
+		<clueset>
+			<clue slideid="76"/>
+			<clue slideid="77"/>
+		</clueset>
+		<answer slideid="78" />
+	</question>
+	<question person="Surinderjeet" id="24" type="connect" ryg="G">
+		<clueset>
+			<clue slideid="79"/>
+		</clueset>
+		<answer slideid="80" />
+	</question>
+	<question person="AjayBhat" id="25" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="81"/>
+		</clueset>
+		<answer slideid="82" />
+	</question>
+	<question person="Yogesh" id="26" type="connect" mm="Celeb" ryg="R">
+		<clueset>
+			<clue slideid="83"/>
+			<clue slideid="84">
+				<video src="data\q26.mp4" x="100" y="100" w="640" h="380" />
+			</clue>
+		</clueset>
+		<answer slideid="85" />
+	</question>
+	<question person="Pallavi" id="27" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="86"/>
+		</clueset>
+		<answer slideid="87" />
+	</question>
+	<question person="Nandini" id="28" type="connect" ryg="R">
+		<clueset>
+			<clue slideid="88"/>
+		</clueset>
+		<answer slideid="89" />
+	</question>
+	<question person="SuhasRao" id="29" type="connect"  ryg="G">
+		<clueset>
+			<clue slideid="90"/>
+		</clueset>
+		<answer slideid="91" />
+	</question>
+	<question person="Vashutosh" id="30" type="connect" mm="Celeb" ryg="G">
+		<clueset>
+			<clue slideid="92"/>
+		</clueset>
+		<answer slideid="93" />
+	</question>
+	<question person="Samarth" id="31" type="connect"  ryg="R">
+		<clueset>
+			<clue slideid="94"/>
+		</clueset>
+		<answer slideid="95" />
+	</question>
+	<question person="Siddharth" id="32" type="longlist"  ryg="R">
+		<clueset>
+			<clue slideid="96"/>
+		</clueset>
+		<answer slideid="97" />
+	</question>
+
+	<!-- Dummy -->
+	<question person="Adarsh" id="33" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+			<clue slideid="2"/>
+		</clueset>
+		<answer slideid="1" endslide="3" />
+	</question>
+	<question person="AmitB" id="34" type="connect"  ryg="G">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Anirudh" id="35" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Yogesh" id="36" type="connect" ryg="G">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Harish" id="37" type="connect"  ryg="R">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Michael" id="38" type="longlist"  ryg="R">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Mythreyi" id="39" type="connect"  ryg="G">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Nandini" id="40" type="longlist"  ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Pallavi" id="41" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="BooBoo" id="42" type="longlist"  ryg="G">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Pranav" id="43" type="connect" ryg="G">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Priyananda" id="44" type="longlist"  ryg="R">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Shashank" id="45" type="connect" ryg="R">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="SriramS" id="46" type="connect" ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Suchitra" id="47" type="connect"  ryg="Y">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+	<question person="Antariksh" id="48" type="connect"  ryg="R">
+		<clueset>
+			<clue slideid="1"/>
+		</clueset>
+		<answer slideid="1" />
+	</question>
+</questions>
