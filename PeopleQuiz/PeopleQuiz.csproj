@@ -121,7 +121,7 @@
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\SimpleQuestion.cs" />
-    <Compile Include="Model\SlideManager.cs" />
+    <Compile Include="Model\MediaManager.cs" />
     <Compile Include="Model\StagedConnectQuestion.cs" />
     <Compile Include="Model\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -166,9 +166,6 @@
     <Resource Include="Resources\allplay.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_roman.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,11 +178,13 @@
     <Resource Include="Resources\prev.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_murica.jpg" />
+    <Resource Include="Resources\hand.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_jaya.jpg" />
-    <Resource Include="Resources\back_math.jpg" />
+    <Resource Include="Resources\Bollywood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xmark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,11 +19,15 @@
                FontStretch="Normal" FontSize="15" Margin="5,-4,0,0" Foreground="Black"/>
         <Image Height="86" HorizontalAlignment="Center" Margin="0,24,9.667,0"
                Name="imgPerson" Stretch="UniformToFill" VerticalAlignment="Top" Width="75" Source="/PeopleQuiz;component/Resources/pallavi.jpg"/>
+        <Image Height="86" HorizontalAlignment="Center" Margin="0,24,9.667,0"
+               Name="imgHand" Stretch="UniformToFill" VerticalAlignment="Top" Width="75" Source="/PeopleQuiz;component/Resources/hand.png"/>
         <Label Content="LXXIIX" HorizontalAlignment="Right" Name="lblQuestionNumber" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"
                FontStretch="Normal" FontSize="13" Margin="0,88,5,0" FontWeight="Bold"
                Foreground="Black" Background="#99FFFFFF" Height="27"/>
         <Image Height="24" HorizontalAlignment="Right" Margin="0,0,64.667,77.333" Name="imgIcon" Stretch="Uniform"
                VerticalAlignment="Bottom" Width="30" Source="/PeopleQuiz;component/Resources/allplay.jpg" RenderTransformOrigin="0.512,-2.818" />
+        <Image Height="24" HorizontalAlignment="Right" Margin="0,0,55,29" Name="imgXMark" Stretch="Uniform"
+               VerticalAlignment="Bottom" Width="30" Source="/PeopleQuiz;component/Resources/xmark.png" RenderTransformOrigin="0.512,-2.818" />
         <Ellipse Name="imgDifficulty" Fill="Green" Width="15" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
     </Grid>
 </UserControl>

@@ -40,27 +40,20 @@ namespace Shenoy.Quiz.UI
                     case QuestionDifficulty.Green: imgDifficulty.Fill = Brushes.Green; break;
                 }
                 m_quiz.VProps.OnPropertyChange += SetProperties;
-                SetProperties(VisualProperties.ShowJayalalitha);
+                SetProperties(VisualProperties.Max);
             }
         }
 
         private void SetProperties(VisualProperties vp)
         {
-            if (m_quiz.VProps.ShowMathMode)
-                this.lblQuestionNumber.Content = GreekNumbers.Convert(m_qid);
-            else
-                this.lblQuestionNumber.Content = m_qid.ToString();
-            if (m_quiz.VProps.ShowJayalalitha)
-                this.imgPerson.Source = MediaManager.GetPerson(Celeb.Jayalalitha);
-            else
-                this.imgPerson.Source = MediaManager.GetPerson(m_quiz.Questions.Get(m_qid).Person);
-            imgDifficulty.Visibility = m_quiz.VProps.ShowTrafficLights ?
-                Visibility.Visible : Visibility.Hidden;
-            if (m_quiz.VProps.ShowWhitifiedProfile)
-                this.lblPerson.Content = PersonTraits.GetWhitifiedName(m_quiz.Questions.Get(m_qid).Person);
-            else
-                this.lblPerson.Content = m_quiz.Questions.Get(m_qid).Person.ToString();
-
+            Person person = m_quiz.Questions.Get(m_qid).Person;
+            this.imgPerson.Source = MediaManager.GetPerson(person, m_quiz.VProps.ShowMoustache);
+            this.lblPerson.Content = person.ToString();
+            this.lblQuestionNumber.Content = m_qid.ToString();
+            this.imgHand.Visibility = m_quiz.VProps.ShowHand && person != Person.Parth ? Visibility.Visible : Visibility.Hidden;
+            this.imgDifficulty.Visibility = Visibility.Hidden;
+            bool fShowMark = m_quiz.VProps.ShowMark && (m_random.Next() % 2 == 0);
+            this.imgXMark.Visibility = fShowMark ? Visibility.Visible : Visibility.Hidden;
         }
 
         public void SetMode(bool fEnabled, bool fGreyedOut)
@@ -76,5 +69,6 @@ namespace Shenoy.Quiz.UI
 
         private int m_qid;
         private Model.Quiz m_quiz;
+        private static Random m_random = new Random();
     }
 }

@@ -29,34 +29,14 @@ namespace Shenoy.Quiz
             AddCelebs();
             AddFirstSet();
             AddSecondSet();
-            AddThirdSet();
-            EnableOnlyPriyanandaQuestions();
 
             m_quiz.VProps.OnPropertyChange += OnStateChanged;
         }
 
         private void OnStateChanged(VisualProperties vp)
         {
-            if (m_quiz.VProps.ShowThirdSet)
-                this.Width = 1540;
-            else if (m_quiz.VProps.ShowSecondSet)
-                this.Width = 1140;
-            else if (m_quiz.VProps.ShowFirstSet)
-            {
-                EnableFirstSet();
-            }
-            if (m_quiz.VProps.ShowOnlyWomen)
-                EnableOnlyWomenQuestions();
-            else
-                ApplyKejriwal(m_quiz.VProps.EvenOddState);
-            if (m_quiz.VProps.ShowWhitifiedProfile)
-                SetBackground("back_murica");
-            else if (m_quiz.VProps.ShowJayalalitha)
-                SetBackground("back_jaya");
-            else if (m_quiz.VProps.ShowMathMode)
-                SetBackground("back_math");
-            else
-                SetBackground("back_roman");
+            if (m_quiz.VProps.ShowSecondSet)
+                this.Width = 1080;
         }
 
         private void SetBackground(string s)
@@ -72,15 +52,14 @@ namespace Shenoy.Quiz
         {
             int celeb = 0;
             for (int r = 0; r < 4; ++r)
-                for (int c = 0; c < 2; ++c)
-                {
-                    CelebControl control = new CelebControl();
-                    control.Person = (Celeb)celeb;
-                    Grid.SetRow(control, 1 + r);
-                    Grid.SetColumn(control, CELEBS_COL_START + c);
-                    this.theGrid.Children.Add(control);
-                    ++celeb;
-                }
+            {
+                CelebControl control = new CelebControl();
+                control.Person = (Celeb)celeb;
+                Grid.SetRow(control, 1 + r);
+                Grid.SetColumn(control, CELEBS_COL_START);
+                this.theGrid.Children.Add(control);
+                ++celeb;
+            }
         }
 
         private void AddFirstSet()
@@ -120,29 +99,6 @@ namespace Shenoy.Quiz
             
         }
 
-        private void AddThirdSet()
-        {
-            int qid = Questions.QUESTIONS_PER_SET * 2 + 1;
-            for (int r = 1; r <= 4; ++r)
-                for (int c = 0; c < 4; ++c)
-                {
-                    QuestionControl control = new QuestionControl();
-                    control.QuestionId = qid;
-                    Grid.SetRow(control, r);
-                    Grid.SetColumn(control, THIRD_SET_COL_START + c);
-                    questionControls[qid++] = control;
-                    control.SetMode(false, true);
-                    this.theGrid.Children.Add(control);
-                }
-            
-        }
-
-        private void EnableOnlyPriyanandaQuestions()
-        {
-            EnableQuestions(
-                (qid) => (m_quiz.Questions.Get(qid).Person == Person.Priyananda));
-        }
-
         private void EnableFirstSet()
         {
             EnableQuestions((qid) => true);
@@ -152,9 +108,6 @@ namespace Shenoy.Quiz
         {
             m_quiz.Questions.AdvanceSet();
             m_countEnabledQuestions = Questions.QUESTIONS_PER_SET;
-            m_quiz.VProps.ShowJayalalitha = false;
-            m_quiz.VProps.ShowMathMode = false;
-            m_quiz.MetaManager.ForceFinishAll();
             EnableQuestions((qid) => true);
         }
 
@@ -166,19 +119,6 @@ namespace Shenoy.Quiz
                 fEnableAll = true;
             EnableQuestions(
                 (qid) => (fEnableAll || PersonTraits.GenderOf(m_quiz.Questions.Get(qid).Person) == GenderType.Female));
-        }
-
-        private void ApplyKejriwal(KejriwalState evenOddState)
-        {
-            bool fEnableAll = false;
-            bool fEven = evenOddState == KejriwalState.ShowOnlyEven;
-
-            if (evenOddState == KejriwalState.ShowAll ||
-                m_quiz.Questions.CountOpenEvenOdd(fEven) == 0)
-                fEnableAll = true;
-
-            EnableQuestions(
-                (qid) => (fEnableAll || (qid % 2 == (fEven ? 0 : 1))));
         }
 
         private void EnableQuestions(Predicate<int> FCheck)
@@ -223,7 +163,7 @@ namespace Shenoy.Quiz
         private int m_countEnabledQuestions;
         private const int CELEBS_COL_START = 1;
         private Shenoy.Quiz.Model.Quiz m_quiz;
-        private const int FIRST_SET_COL_START = CELEBS_COL_START + 2;
+        private const int FIRST_SET_COL_START = CELEBS_COL_START + 1;
         private const int SECOND_SET_COL_START = FIRST_SET_COL_START + 4;
         private const int THIRD_SET_COL_START = SECOND_SET_COL_START + 4;
     }

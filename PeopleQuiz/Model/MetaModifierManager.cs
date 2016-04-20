@@ -7,15 +7,10 @@ namespace Shenoy.Quiz.Model
     {
         public MetaModifierManager(Quiz quiz)
         {
-            m_fixedModifiers[MetaModifiers.ShowFirstSet] = new EnableAllInset();
-            m_fixedModifiers[MetaModifiers.DoublesDuration] = new DoublesDuration();
-            m_fixedModifiers[MetaModifiers.HalvesDuration] = new HalvesDuration();
-            m_fixedModifiers[MetaModifiers.RedYellowGreen] = new RedYellowGreen();
-
-            m_celebModifiers[Celeb.Kejriwal] = new DoAKejriwal();
-            m_celebModifiers[Celeb.Jayalalitha] = new DoAJayalalitha();
-            m_celebModifiers[Celeb.RahulG] = new DoARahulGandhi();
-            m_celebModifiers[Celeb.SalmanKhan] = new DoASalKhan();
+            m_celebModifiers[Celeb.Amitabh] = new DoublesDuration();
+            m_celebModifiers[Celeb.Teja] = new DoATeja();
+            m_celebModifiers[Celeb.Utpal] = new DoAnUtpalDutt();
+            m_celebModifiers[Celeb.ManojK] = new DoAManojKumar();
             quiz.Questions.QuestionAnswered += OnQuestionAnswered;
         }
 

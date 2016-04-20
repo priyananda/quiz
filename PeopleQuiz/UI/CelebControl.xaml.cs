@@ -27,12 +27,6 @@ namespace Shenoy.Quiz.UI
         private void OnPropertyChange(VisualProperties obj)
         {
             bool fEnabled = true;
-            if (m_celeb == Celeb.GRRM || m_celeb == Celeb.KyloRen)
-                fEnabled = false;
-            else if (m_celeb == Celeb.Kejriwal)
-                fEnabled = !Quiz.Model.Quiz.Current.VProps.ShowOnlyWomen;
-            else if (m_celeb == Celeb.RahulG)
-                fEnabled = (Quiz.Model.Quiz.Current.VProps.EvenOddState == KejriwalState.ShowAll);
             SetMode(fEnabled, !fEnabled);
         }
 
@@ -42,10 +36,7 @@ namespace Shenoy.Quiz.UI
             set
             {
                 m_celeb = value;
-                this.lblPerson.Content = m_celeb.ToString();
                 this.imgPerson.Source = MediaManager.GetPerson(m_celeb);
-                if (m_celeb == Celeb.GRRM || m_celeb == Celeb.KyloRen)
-                    SetMode(false, true);
             }
         }
 

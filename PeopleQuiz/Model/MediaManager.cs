@@ -23,9 +23,9 @@ namespace Shenoy.Quiz.Model
             return m_celebSlides[celeb];
         }
 
-        public static BitmapImage GetPerson(Person person)
+        public static BitmapImage GetPerson(Person person, bool fM = false)
         {
-            Tuple<Person, bool> key = new Tuple<Person, bool>(person, false);
+            Tuple<Person, bool> key = new Tuple<Person, bool>(person, fM);
             string suffix = key.Item2 ? "_m" : "";
             if (!m_persons.ContainsKey(key))
                 m_persons[key] = LoadImage("people\\" + person + suffix + ".jpg", false);
@@ -34,7 +34,7 @@ namespace Shenoy.Quiz.Model
         public static BitmapImage GetPerson(Celeb celeb)
         {
             if (!m_celebs.ContainsKey(celeb))
-                m_celebs[celeb] = LoadImage("celebs\\" + celeb + ".jpg", false);
+                m_celebs[celeb] = LoadImage("celebs\\" + celeb + ".png", false);
             return m_celebs[celeb];
         }
         public static BitmapImage GetSlide(ObjectWithSlide ows)
@@ -50,6 +50,7 @@ namespace Shenoy.Quiz.Model
                 return bmpUnknown;
             }
         }
+
         public static Uri VideoURL(string filename)
         {
             string imagePath = System.IO.Path.Combine(Environment.CurrentDirectory, filename);

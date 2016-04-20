@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Height="125" Width="95" FontFamily="Segoe UI" MouseDown="HandleClick">
-    <Grid Margin="0,0,0,0" Height="125" Width="95">
-        <Rectangle Height="120" HorizontalAlignment="Left" Margin="2,3,0,0"
-                   Stroke="Black" VerticalAlignment="Top" Width="90" RadiusX="10" RadiusY="10" StrokeThickness="2">
+             Height="100" Width="100" FontFamily="Segoe UI" MouseDown="HandleClick">
+    <Grid Margin="0,0,0,0" Height="100" Width="100">
+        <Rectangle Height="90" HorizontalAlignment="Left" Margin="2,3,0,0"
+                   Stroke="Black" VerticalAlignment="Top" Width="90" RadiusX="50" RadiusY="50" StrokeThickness="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0" />
@@ -15,9 +15,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Priyananda" HorizontalAlignment="Left" Name="lblPerson" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-               FontStretch="Normal" FontSize="15" Margin="5,-4,0,0" Foreground="Black"/>
-        <Image Height="86" HorizontalAlignment="Center" Margin="0,24,9.667,0"
-               Name="imgPerson" Stretch="UniformToFill" VerticalAlignment="Top" Width="75" Source="/PeopleQuiz;component/Resources/pallavi.jpg"/>
+        <Image Height="86" HorizontalAlignment="Center" Margin="10,5,9.667,0"
+               Name="imgPerson" Stretch="Fill" VerticalAlignment="Top" Width="75" Source="/PeopleQuiz;component/Resources/pallavi.jpg"/>
     </Grid>
 </UserControl>

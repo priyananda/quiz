@@ -8,78 +8,37 @@ namespace Shenoy.Quiz.Model
 {
     public enum VisualProperties
     {
-        ShowFirstSet,
         ShowSecondSet,
-        ShowThirdSet,
-        EvenOddState,
-        ShowJayalalitha,
-        ShowOnlyWomen,
-        ShowWhitifiedProfile,
-        ShowTrafficLights,
-        MathMode
-    }
-
-    public enum KejriwalState
-    {
-        ShowOnlyEven,
-        ShowOnlyOdd,
-        ShowAll,
+        ShowMoustache,
+        ShowHand,
+        ShowMark,
+        Max
     }
 
     public class VisualPropertyBag
     {
-        public bool ShowFirstSet
-        {
-            get { return m_fShowFirstSet; }
-            set { m_fShowFirstSet = value; FireEvent(VisualProperties.ShowFirstSet); }
-        }
-
         public bool ShowSecondSet
         {
             get { return m_fShowSecondSet; }
             set { m_fShowSecondSet = value; FireEvent(VisualProperties.ShowSecondSet); }
         }
 
-        public bool ShowThirdSet
+        public bool ShowMoustache
         {
-            get { return m_fShowThirdSet; }
-            set { m_fShowThirdSet = value; FireEvent(VisualProperties.ShowThirdSet); }
+            get { return m_fShowMoustache; }
+            set { m_fShowMoustache = value; FireEvent(VisualProperties.ShowMoustache); }
         }
 
-        public KejriwalState EvenOddState
+        public bool ShowHand
         {
-            get { return m_fEvenOddState; }
-            set { m_fEvenOddState = value; FireEvent(VisualProperties.EvenOddState); }
+            get { return m_fShowHand; }
+            set { m_fShowHand = value; FireEvent(VisualProperties.ShowHand); }
         }
 
-        public bool ShowJayalalitha
+        public bool ShowMark
         {
-            get { return m_fShowjaya; }
-            set { m_fShowjaya = value; FireEvent(VisualProperties.ShowJayalalitha); }
-        }
-
-        public bool ShowOnlyWomen
-        {
-            get { return m_fShowOnlyWomen; }
-            set { m_fShowOnlyWomen = value; FireEvent(VisualProperties.ShowOnlyWomen); }
-        }
-
-        public bool ShowWhitifiedProfile
-        {
-            get { return m_fShowWhitifiedProfile; }
-            set { m_fShowWhitifiedProfile = value; FireEvent(VisualProperties.ShowWhitifiedProfile); }
-        }
-
-        public bool ShowTrafficLights
-        {
-            get { return m_fShowTrafficLights; }
-            set { m_fShowTrafficLights = value; FireEvent(VisualProperties.ShowTrafficLights); }
-        }
-
-        public bool ShowMathMode
-        {
-            get { return m_fMathMode; }
-            set { m_fMathMode = value; FireEvent(VisualProperties.MathMode); }
+            get { return m_fShowMark; }
+            set { m_fShowMark = value; FireEvent(VisualProperties.ShowMark); }
         }
 
         public event Action<VisualProperties> OnPropertyChange;
@@ -90,14 +49,9 @@ namespace Shenoy.Quiz.Model
                 OnPropertyChange(vp);
         }
 
-        private bool m_fShowFirstSet = false;
         private bool m_fShowSecondSet = false;
-        private bool m_fShowThirdSet = false;
-        private KejriwalState m_fEvenOddState = KejriwalState.ShowAll;
-        private bool m_fShowjaya = false;
-        private bool m_fShowOnlyWomen = false;
-        private bool m_fShowWhitifiedProfile = false;
-        private bool m_fShowTrafficLights = false;
-        private bool m_fMathMode = false;
+        private bool m_fShowMoustache = false;
+        private bool m_fShowHand = false;
+        private bool m_fShowMark = false;
     }
 }

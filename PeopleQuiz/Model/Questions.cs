@@ -43,7 +43,7 @@ namespace Shenoy.Quiz.Model
         }
         public int LastInSet
         {
-            get { return FirstInSet + QUESTIONS_PER_SET - 1; }
+            get { int qmax = FirstInSet + QUESTIONS_PER_SET - 1; return Math.Min(qmax, this.Count - 1); }
         }
         public void AdvanceSet()
         {

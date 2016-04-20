@@ -127,7 +127,6 @@ namespace Shenoy.Quiz.UI
             {
                 this.grid.Children.Remove(video);
                 video = null;
-                return;
             }
             Clue clue = GetCurrentClue();
             if (clue != null && clue.AVData != null)
