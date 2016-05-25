@@ -1,0 +1,60 @@
+<jeopardy>
+	<topics>
+		<topic name="History" logo="data\historylogo.png" />
+		<topic name="DoorDarshan" logo="data\doordarshan.jpg" />
+		<topic name="Entertainment" logo="data\entertainment.jpg" />
+		<topic name="Discovery" logo="data\discovery.jpg" />
+	</topics>
+	<types>
+		<type name="Puzzles" abbr="(Puzz)"/>
+		<type name="Connect" abbr="Conn"/>
+		<type name="P/A/R/V" abbr="(PARV)"/>
+		<type name="tl;dr" abbr="(tl;dr)" />
+	</types>
+	
+	<!--
+ int qid = 1;
+            //Puzzles
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 0, 2), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 0, 2), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 0, 2), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 0, 2), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 0, 2), qid++); //Who
+
+            //Text
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 1, 0), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 1, 1), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 1, 2), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 1, 0), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 1, 1), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 1, 2), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 1, 0), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 1, 1), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 1, 2), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 1, 0), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 1, 1), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 1, 2), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 1, 0), qid++); //Who
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 1, 1), qid++); //Who
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 1, 2), qid++); //Who
+            
+            //Parv
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 2, 0), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 2, 1), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 2, 0), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 2, 1), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 2, 0), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 2, 1), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 2, 2), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 2, 0), qid++); //Who
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 2, 1), qid++); //Who
+
+            //Connects
+            m_loc2qid.Add(new Tuple<int, int, int>(0, 3, 2), qid++); //Tech
+            m_loc2qid.Add(new Tuple<int, int, int>(1, 3, 0), qid++); //Geek
+            m_loc2qid.Add(new Tuple<int, int, int>(2, 3, 1), qid++); //Pop
+            m_loc2qid.Add(new Tuple<int, int, int>(3, 3, 1), qid++); //G/L
+            m_loc2qid.Add(new Tuple<int, int, int>(4, 3, 2), qid++); //Who
+	-->
+	
+</jeopardy>
