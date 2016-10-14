@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prelims", "Prelims\Prelims.csproj", "{A4F8167D-49EC-4DFF-A357-91EB6C2FB7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scorer", "Scorer\Scorer.csproj", "{77A71920-629A-4DD8-87D2-0BFBE28EF9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connector", "Connector\Connector.csproj", "{AFC407CB-98EC-45BE-960F-DA307E56CB24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4F8167D-49EC-4DFF-A357-91EB6C2FB7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F8167D-49EC-4DFF-A357-91EB6C2FB7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F8167D-49EC-4DFF-A357-91EB6C2FB7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F8167D-49EC-4DFF-A357-91EB6C2FB7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A71920-629A-4DD8-87D2-0BFBE28EF9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A71920-629A-4DD8-87D2-0BFBE28EF9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A71920-629A-4DD8-87D2-0BFBE28EF9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A71920-629A-4DD8-87D2-0BFBE28EF9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
