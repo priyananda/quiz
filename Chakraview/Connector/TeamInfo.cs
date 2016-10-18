@@ -13,12 +13,15 @@ namespace Shenoy.Quiz.Backend
         public String SecondPersonName { get; set; }
         public bool IsFinalist { get; set; }
 
+        public long Score { get; set; }
+
         public void SerializeTo(Dictionary<string, object> propertyBag)
         {
             propertyBag.Add("TeamId", this.TeamId);
             propertyBag.Add("FirstPersonName", this.FirstPersonName);
             propertyBag.Add("SecondPersonName", this.SecondPersonName);
             propertyBag.Add("IsFinalist", this.IsFinalist);
+            propertyBag.Add("Score", this.IsFinalist);
         }
 
         public void Deserialize(Dictionary<string, object> propertyBag)
@@ -27,6 +30,7 @@ namespace Shenoy.Quiz.Backend
             this.FirstPersonName = (String)propertyBag["firstpersonname"];
             this.SecondPersonName = (String)propertyBag["secondpersonname"];
             this.IsFinalist = (bool)propertyBag["isfinalist"];
+            this.Score = (long)(double)propertyBag["score"];
         }
     }
 }

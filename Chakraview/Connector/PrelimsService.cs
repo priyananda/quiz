@@ -13,7 +13,7 @@ namespace Shenoy.Quiz.Connector
         {
             try
             {
-                Server server = new Server();
+                Server server = new Server(true);
                 return server.Pull();
             }
             catch
@@ -26,7 +26,7 @@ namespace Shenoy.Quiz.Connector
         {
             try
             {
-                Server server = new Server();
+                Server server = new Server(true);
                 server.Push(teams);
             }
             catch

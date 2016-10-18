@@ -11,6 +11,10 @@ namespace Shenoy.Quiz.Backend
 {
     class Server
     {
+        public Server(bool isPrelims)
+        {
+            this.isPrelims = isPrelims;
+        }
         public void Push(List<TeamInfo> teams)
         {
             StringBuilder builder = new StringBuilder();
@@ -22,6 +26,7 @@ namespace Shenoy.Quiz.Backend
                 BuildData(builder, "team", properties);
                 builder.Append("&");
             }
+            SetMode(builder);
             ExecutePush(builder.ToString());
         }
 
@@ -31,6 +36,13 @@ namespace Shenoy.Quiz.Backend
             builder.Append(paramName);
             builder.Append("=");
             builder.Append(WebUtility.UrlEncode(jsonData));
+        }
+
+        private void SetMode(StringBuilder builder)
+        {
+            builder.Append("mode");
+            builder.Append("=");
+            builder.Append(isPrelims ? "prelims" : "finals");
         }
 
         public List<TeamInfo> Pull()
@@ -62,7 +74,9 @@ namespace Shenoy.Quiz.Backend
             {
                 TeamInfo team = new TeamInfo();
                 team.TeamId = rand.Next(100, 999);
-                team.IsFinalist = (i < 6);
+                //team.IsFinalist = (i < 6);
+                team.FirstPersonName = "Shashank Kavishwar";
+                team.SecondPersonName = "Vaidyanathan Chandra";
                 teams.Add(team);
             }
             return teams;
@@ -89,8 +103,11 @@ namespace Shenoy.Quiz.Backend
 
         private string ExecutePull()
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(
-                UseTestServer ? PULL_CONNECTION_URL_TEST : PULL_CONNECTION_URL_PROD);
+            String url = String.Format("{0}?mode={1}",
+                UseTestServer ? PULL_CONNECTION_URL_TEST : PULL_CONNECTION_URL_PROD,
+                isPrelims ? "prelims" : "finals");
+
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Method = "GET";
 
             using (var myHttpWebResponse = (HttpWebResponse)request.GetResponse())
@@ -107,9 +124,10 @@ namespace Shenoy.Quiz.Backend
 
         private bool UseTestServer = true;
         private bool UseFakeData = true;
-        private const string PUSH_CONNECTION_URL_TEST = "http://localhost:8888/prelimsset";
-        private const string PUSH_CONNECTION_URL_PROD = "http://quizpl.us/prelimsset";
-        private const string PULL_CONNECTION_URL_TEST = "http://localhost:8888/prelimsget";
-        private const string PULL_CONNECTION_URL_PROD = "http://quizpl.us/prelimsget";
+        private bool isPrelims = true;
+        private const string PUSH_CONNECTION_URL_TEST = "http://localhost:8888/teaminfoset";
+        private const string PUSH_CONNECTION_URL_PROD = "http://quizpl.us/teaminfoset";
+        private const string PULL_CONNECTION_URL_TEST = "http://localhost:8888/teaminfoget";
+        private const string PULL_CONNECTION_URL_PROD = "http://quizpl.us/teaminfoget";
     }
 }

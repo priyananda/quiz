@@ -36,6 +36,7 @@ namespace Shenoy.Quiz
             double centerX = bgCanvas.Width / 2 - 30;
             double centerY = bgCanvas.Height / 2 - 30;
             double radius = 100;
+            double teamradius = 200;
             int teamCount = 6;
 
             for (int team = 0; team < teamCount; ++team)
@@ -43,8 +44,11 @@ namespace Shenoy.Quiz
                 double angle = 2.0 * team * (Math.PI / teamCount);
                 double teamX = centerX + radius * Math.Sin(angle);
                 double teamY = centerY + radius * Math.Cos(angle);
+                double teamPanelX = centerX + teamradius * Math.Sin(angle);
+                double teamPanelY = centerY + teamradius * Math.Cos(angle);
 
                 m_winnerLocations.Add(new Point(teamX, teamY));
+                m_winnerPanelLocations.Add(new Point(teamPanelX, teamPanelY));
             }
         }
 
@@ -70,6 +74,7 @@ namespace Shenoy.Quiz
                 return;
 
             bgCanvas.Children.Clear();
+            m_winners.Clear();
 
             double centerX = bgCanvas.Width / 2 - 30;
             double centerY = bgCanvas.Height / 2 - 30;
@@ -108,6 +113,7 @@ namespace Shenoy.Quiz
                 {
                     anyFinalists = true;
                     m_winners.Add(grid);
+                    grid.Tag = m_teams[team].TeamId;
                 }
             }
 
@@ -124,6 +130,7 @@ namespace Shenoy.Quiz
                 m_dispatcherTimer.Start();
             }
         }
+
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             if (m_winners.Count == 0 || m_winnerLocations.Count == 0)
@@ -134,10 +141,13 @@ namespace Shenoy.Quiz
             Point destLoc = m_winnerLocations[0];
             m_winnerLocations.RemoveAt(0);
 
-            AnimateElement(element, destLoc);
+            Point panelLoc = m_winnerPanelLocations[0];
+            m_winnerPanelLocations.RemoveAt(0);
+
+            AnimateElement(element, destLoc, panelLoc);
         }
 
-        private void AnimateElement(UIElement element, Point destLoc)
+        private void AnimateElement(UIElement element, Point destLoc, Point panelLoc)
         {
             var animX = new DoubleAnimation();
             animX.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
@@ -149,13 +159,44 @@ namespace Shenoy.Quiz
             animY.From = Canvas.GetTop(element);
             animY.To = destLoc.Y;
 
+            animX.Completed += (s, e) =>
+            {
+                long teamid = (long)((element as Grid).Tag);
+                TeamInfo teaminfo = m_teams.Find((t) => t.TeamId == teamid);
+                CreateNamePanel(teaminfo, panelLoc);
+            };
+
             element.BeginAnimation(Canvas.LeftProperty, animX);
             element.BeginAnimation(Canvas.TopProperty, animY);
+        }
+
+        private void CreateNamePanel(TeamInfo teaminfo, Point destLoc)
+        {
+            Rectangle rect = new Rectangle();
+            rect.Fill = Brushes.AliceBlue;
+            rect.Stroke = Brushes.Black;
+            rect.Width = 150;
+            rect.Height = 60;
+
+            TextBlock textblock = new TextBlock();
+            textblock.Text = String.Format("Team {0}\n{1}\n{2}", teaminfo.TeamId.ToString(), teaminfo.FirstPersonName, teaminfo.SecondPersonName);
+            textblock.TextAlignment = TextAlignment.Center;
+            textblock.VerticalAlignment = VerticalAlignment.Center;
+            textblock.FontWeight = FontWeights.Bold;
+
+            Grid grid = new Grid();
+            grid.Children.Add(rect);
+            grid.Children.Add(textblock);
+
+            bgCanvas.Children.Add(grid);
+            Canvas.SetLeft(grid, destLoc.X - 50);
+            Canvas.SetTop(grid, destLoc.Y);
         }
 
         DispatcherTimer m_dispatcherTimer;
         List<TeamInfo> m_teams;
         List<UIElement> m_winners = new List<UIElement>();
         List<Point> m_winnerLocations = new List<Point>();
+        List<Point> m_winnerPanelLocations = new List<Point>();
     }
 }

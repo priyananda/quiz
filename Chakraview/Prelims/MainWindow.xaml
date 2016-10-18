@@ -6,14 +6,13 @@
         xmlns:local="clr-namespace:Shenoy.Quiz"
         mc:Ignorable="d"
         Title="Chakraview 2016 - Prelims Results" Height="680" Width="1024" ResizeMode="NoResize">
-    <Grid Height="640" Width="1024" >
+    <Grid Height="640" Width="1024" Name="outerGrid" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
         <Grid.Resources>
             <ImageBrush x:Key="GoButtonImageBrush" ImageSource="Resources/gobutton.png" Stretch="UniformToFill"/>
             <ImageBrush x:Key="NextButtonImageBrush" ImageSource="Resources/nextbutton.png" Stretch="UniformToFill"/>
@@ -36,16 +35,14 @@
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
-        
-
         <Canvas Width="1024" Height="640" Name="bgCanvas" Grid.Row="0" Grid.Column="0">
-        <Canvas.Background>
-            <ImageBrush ImageSource="Resources/prelims-bg.png" Stretch="Fill" />
-        </Canvas.Background>
-    </Canvas>
-          <Button Width="70" Height="70" Margin="50,70,0,0" Background="{StaticResource GoButtonImageBrush}"
-                  HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource AddButtonImageStyle}" Click="GoButton_Click"/>
-          <Button Width="70" Height="70" Margin="50,160,0,0" Background="{StaticResource NextButtonImageBrush}" Name="nextWinnerButton"
-                  HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource AddButtonImageStyle}" Click="NextButton_Click"/>
+            <Canvas.Background>
+                <ImageBrush ImageSource="Resources/prelims-bg.png" Stretch="Fill" />
+            </Canvas.Background>
+        </Canvas>
+        <Button Width="70" Height="70" Margin="0,560,0,0" Background="{StaticResource GoButtonImageBrush}"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource AddButtonImageStyle}" Click="GoButton_Click"/>
+        <Button Width="70" Height="70" Margin="75,560,0,0" Background="{StaticResource NextButtonImageBrush}" Name="nextWinnerButton"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource AddButtonImageStyle}" Click="NextButton_Click"/>
     </Grid>
 </Window>

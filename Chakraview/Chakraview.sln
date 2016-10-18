@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scorer", "Scorer\Scorer.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connector", "Connector\Connector.csproj", "{AFC407CB-98EC-45BE-960F-DA307E56CB24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finals", "Finals\Finals.csproj", "{52E68681-168E-4FA7-A8B7-0B4659D7E414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC407CB-98EC-45BE-960F-DA307E56CB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E68681-168E-4FA7-A8B7-0B4659D7E414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E68681-168E-4FA7-A8B7-0B4659D7E414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E68681-168E-4FA7-A8B7-0B4659D7E414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E68681-168E-4FA7-A8B7-0B4659D7E414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

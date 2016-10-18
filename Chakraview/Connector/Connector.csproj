@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinalsService.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TeamInfo.cs" />
     <Compile Include="PrelimsService.cs" />
