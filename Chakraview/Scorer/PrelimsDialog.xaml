@@ -1,0 +1,78 @@
+﻿<Window x:Class="Shenoy.Quiz.PrelimsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shenoy.Quiz"
+        mc:Ignorable="d"
+        Title="PrelimsDialog" Height="360" Width="680" FontFamily="Segoe UI" FontSize="18">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Team" Grid.Row="0"  Grid.Column="0" />
+        <Label Content="First Person" Grid.Row="0"  Grid.Column="1" />
+        <Label Content="Second Person" Grid.Row="0"  Grid.Column="2" />
+        <Label Content="Score" Grid.Row="0"  Grid.Column="3" />
+
+        <Label Content="1" Grid.Row="1" Grid.Column="0" />
+        <Label Content="2" Grid.Row="2" Grid.Column="0" />
+        <Label Content="3" Grid.Row="3" Grid.Column="0" />
+        <Label Content="4" Grid.Row="4" Grid.Column="0" />
+        <Label Content="5" Grid.Row="5" Grid.Column="0" />
+        <Label Content="6" Grid.Row="6" Grid.Column="0" />
+
+        <TextBox Grid.Row="1" Grid.Column="1" Name="m_txtT1First" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="m_txtT2First" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="m_txtT3First" />
+        <TextBox Grid.Row="4" Grid.Column="1" Name="m_txtT4First" />
+        <TextBox Grid.Row="5" Grid.Column="1" Name="m_txtT5First" />
+        <TextBox Grid.Row="6" Grid.Column="1" Name="m_txtT6First" />
+
+        <TextBox Grid.Row="1" Grid.Column="2" Name="m_txtT1Second" />
+        <TextBox Grid.Row="2" Grid.Column="2" Name="m_txtT2Second" />
+        <TextBox Grid.Row="3" Grid.Column="2" Name="m_txtT3Second" />
+        <TextBox Grid.Row="4" Grid.Column="2" Name="m_txtT4Second" />
+        <TextBox Grid.Row="5" Grid.Column="2" Name="m_txtT5Second" />
+        <TextBox Grid.Row="6" Grid.Column="2" Name="m_txtT6Second" />
+
+        <TextBox Grid.Row="1" Grid.Column="3" Name="m_txtT1Score" />
+        <TextBox Grid.Row="2" Grid.Column="3" Name="m_txtT2Score" />
+        <TextBox Grid.Row="3" Grid.Column="3" Name="m_txtT3Score" />
+        <TextBox Grid.Row="4" Grid.Column="3" Name="m_txtT4Score" />
+        <TextBox Grid.Row="5" Grid.Column="3" Name="m_txtT5Score" />
+        <TextBox Grid.Row="6" Grid.Column="3" Name="m_txtT6Score" />
+
+        <Button Grid.Row="1" Grid.Column="4" Click="T1Plus5" Content="+5" />
+        <Button Grid.Row="2" Grid.Column="4" Click="T2Plus5" Content="+5" />
+        <Button Grid.Row="3" Grid.Column="4" Click="T3Plus5" Content="+5" />
+        <Button Grid.Row="4" Grid.Column="4" Click="T4Plus5" Content="+5" />
+        <Button Grid.Row="5" Grid.Column="4" Click="T5Plus5" Content="+5" />
+        <Button Grid.Row="6" Grid.Column="4" Click="T6Plus5" Content="+5" />
+
+        <Button Grid.Row="1" Grid.Column="5" Click="T1Minus5" Content="-5" />
+        <Button Grid.Row="2" Grid.Column="5" Click="T2Minus5" Content="-5" />
+        <Button Grid.Row="3" Grid.Column="5" Click="T3Minus5" Content="-5" />
+        <Button Grid.Row="4" Grid.Column="5" Click="T4Minus5" Content="-5" />
+        <Button Grid.Row="5" Grid.Column="5" Click="T5Minus5" Content="-5" />
+        <Button Grid.Row="6" Grid.Column="5" Click="T6Minus5" Content="-5" />
+        
+        <Button Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" Content="Update" Margin="0,5,0,0" Click="DoUpdate"/>
+    </Grid>
+</Window>

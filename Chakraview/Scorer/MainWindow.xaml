@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shenoy.Quiz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="250" Width="200">
+    <StackPanel Orientation="Vertical">
+        <Button Content="Prelims" Click="ShowPrelims" Width="120" Margin="10,10,0,0" />
+        <Button Content="Finals" Click="ShowFinals" Width="120" Margin="10,10,0,0"  />
+    </StackPanel>
 </Window>

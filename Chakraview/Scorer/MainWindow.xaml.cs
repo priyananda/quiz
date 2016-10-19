@@ -24,20 +24,16 @@ namespace Shenoy.Quiz
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            //TeamInfo teamInfo = new TeamInfo();
-            //teamInfo.TeamId = 101;
-            //teamInfo.FirstPersonName = "Heera";
-            //teamInfo.SecondPersonName = "Panna";
-            //teamInfo.IsFinalist = false;
+        private void ShowPrelims(object sender, RoutedEventArgs e)
+        {
+            new PrelimsDialog().ShowDialog();
+        }
 
-            //List<TeamInfo> teams = new List<TeamInfo>();
-            //teams.Add(teamInfo);
+        private void ShowFinals(object sender, RoutedEventArgs e)
+        {
 
-            //Server.Push(teams);
-
-            var teams = PrelimsService.GetTeams();
-            int c = teams.Count;
         }
     }
 }

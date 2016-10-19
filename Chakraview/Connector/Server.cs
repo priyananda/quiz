@@ -70,11 +70,12 @@ namespace Shenoy.Quiz.Backend
         {
             List<TeamInfo> teams = new List<TeamInfo>();
             Random rand = new Random();
-            for (int i = 0; i < 40; ++i)
+            int teamCount = (isPrelims ? 40 : 6);
+            for (int i = 0; i < teamCount; ++i)
             {
                 TeamInfo team = new TeamInfo();
-                team.TeamId = rand.Next(100, 999);
-                //team.IsFinalist = (i < 6);
+                team.TeamId = (isPrelims ? rand.Next(100, 999) : 6 - i);
+                team.IsFinalist = (i < 6);
                 team.FirstPersonName = "Shashank Kavishwar";
                 team.SecondPersonName = "Vaidyanathan Chandra";
                 teams.Add(team);
@@ -123,7 +124,7 @@ namespace Shenoy.Quiz.Backend
         }
 
         private bool UseTestServer = true;
-        private bool UseFakeData = true;
+        private bool UseFakeData = false;
         private bool isPrelims = true;
         private const string PUSH_CONNECTION_URL_TEST = "http://localhost:8888/teaminfoset";
         private const string PUSH_CONNECTION_URL_PROD = "http://quizpl.us/teaminfoset";

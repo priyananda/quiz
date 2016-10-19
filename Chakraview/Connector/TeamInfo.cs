@@ -21,7 +21,7 @@ namespace Shenoy.Quiz.Backend
             propertyBag.Add("FirstPersonName", this.FirstPersonName);
             propertyBag.Add("SecondPersonName", this.SecondPersonName);
             propertyBag.Add("IsFinalist", this.IsFinalist);
-            propertyBag.Add("Score", this.IsFinalist);
+            propertyBag.Add("Score", this.Score);
         }
 
         public void Deserialize(Dictionary<string, object> propertyBag)
@@ -29,8 +29,10 @@ namespace Shenoy.Quiz.Backend
             this.TeamId = (long)(double)propertyBag["teamid"];
             this.FirstPersonName = (String)propertyBag["firstpersonname"];
             this.SecondPersonName = (String)propertyBag["secondpersonname"];
-            this.IsFinalist = (bool)propertyBag["isfinalist"];
-            this.Score = (long)(double)propertyBag["score"];
+            if (propertyBag.ContainsKey("isfinalist"))
+                this.IsFinalist = (bool)propertyBag["isfinalist"];
+            if (propertyBag.ContainsKey("score"))
+                this.Score = (long)(double)propertyBag["score"];
         }
     }
 }

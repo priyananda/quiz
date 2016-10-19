@@ -21,46 +21,46 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="Team" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="Team" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T1" Name="m_txtTeam1Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T1" Name="m_txtTeam1Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam1Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam1Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T2" Name="m_txtTeam2Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T2" Name="m_txtTeam2Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam2Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam2Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T3" Name="m_txtTeam3Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T3" Name="m_txtTeam3Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam3Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam3Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T1" Name="m_txtTeam4Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T1" Name="m_txtTeam4Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam4Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam4Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T5" Name="m_txtTeam5Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T5" Name="m_txtTeam5Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam5Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam5Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
         <Border Grid.Row="6" Grid.Column="0" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="T6" Name="m_txtTeam6Name" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBlock Text="T6" Name="m_txtTeam6Name" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="6" Grid.Column="1" BorderThickness="1" BorderBrush="DarkGray">
-            <TextBlock Text="100" Name="m_txtTeam6Score" FontFamily="Calibri" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="100" Name="m_txtTeam6Score" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         </Border>
     </Grid>
 </Window>
