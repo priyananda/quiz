@@ -41,19 +41,18 @@ namespace Shenoy.Quiz
 
         private void Round3Start(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Round 3");
+            new Round3Window().ShowDialog();
         }
 
         private void Round4Start(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Round 4");
+            new Round4Window().ShowDialog();
         }
 
         private void Round5Start(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Round 5");
         }
-
         private void Scores(object sender, RoutedEventArgs e)
         {
             new ScoresWindow().ShowDialog();

@@ -123,7 +123,7 @@ namespace Shenoy.Quiz.Backend
             }
         }
 
-        private bool UseTestServer = true;
+        private bool UseTestServer = false;
         private bool UseFakeData = false;
         private bool isPrelims = true;
         private const string PUSH_CONNECTION_URL_TEST = "http://localhost:8888/teaminfoset";

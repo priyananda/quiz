@@ -1,0 +1,77 @@
+﻿<Window x:Class="Shenoy.Quiz.Round4Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shenoy.Quiz"
+        mc:Ignorable="d"
+        Title="Chakraview 2016 - Round 4" Width="1152" Height="750" ResizeMode="NoResize">
+    <Grid Width="1152" Height="720" Name="outerGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Width="1152" Height="720" Name="bgCanvas" Grid.Row="0" Grid.Column="0">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Resources/round3bg.jpg" Stretch="Fill" />
+            </Canvas.Background>
+        </Canvas>
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q1.png" Width="100" Height="100" Margin="40,60,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q2.png" Width="100" Height="100" Margin="40,160,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q3.png" Width="100" Height="100" Margin="40,260,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q4.png" Width="100" Height="100" Margin="40,360,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q5.png" Width="100" Height="100" Margin="40,460,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Image MouseUp="ShowSet1" Source="Resources/connect-q6.png" Width="100" Height="100" Margin="40,560,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Grid Width="600" Height="600" Margin="300,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            
+            <ToggleButton Grid.Row="0" Grid.Column="0" Content="A" Name="m_btn00" Click="OnToggle" />
+            <ToggleButton Grid.Row="0" Grid.Column="1" Content="A" Name="m_btn01" Click="OnToggle"  />
+            <ToggleButton Grid.Row="0" Grid.Column="2" Content="A" Name="m_btn02" Click="OnToggle"  />
+            <ToggleButton Grid.Row="0" Grid.Column="3" Content="A" Name="m_btn03" Click="OnToggle"  />
+
+            <ToggleButton Grid.Row="1" Grid.Column="0" Content="A" Name="m_btn10" Click="OnToggle"  />
+            <ToggleButton Grid.Row="1" Grid.Column="1" Content="A" Name="m_btn11" Click="OnToggle"  />
+            <ToggleButton Grid.Row="1" Grid.Column="2" Content="A" Name="m_btn12" Click="OnToggle"  />
+            <ToggleButton Grid.Row="1" Grid.Column="3" Content="A" Name="m_btn13" Click="OnToggle"  />
+
+            <ToggleButton Grid.Row="2" Grid.Column="0" Content="A" Name="m_btn20" Click="OnToggle"  />
+            <ToggleButton Grid.Row="2" Grid.Column="1" Content="A" Name="m_btn21" Click="OnToggle"  />
+            <ToggleButton Grid.Row="2" Grid.Column="2" Content="A" Name="m_btn22" Click="OnToggle"  />
+            <ToggleButton Grid.Row="2" Grid.Column="3" Content="A" Name="m_btn23" Click="OnToggle"  />
+
+            <ToggleButton Grid.Row="3" Grid.Column="0" Content="A" Name="m_btn30" Click="OnToggle"  />
+            <ToggleButton Grid.Row="3" Grid.Column="1" Content="A" Name="m_btn31" Click="OnToggle"  />
+            <ToggleButton Grid.Row="3" Grid.Column="2" Content="A" Name="m_btn32" Click="OnToggle"  />
+            <ToggleButton Grid.Row="3" Grid.Column="3" Content="A" Name="m_btn33" Click="OnToggle"  />
+        </Grid>
+    </Grid>
+</Window>
+
