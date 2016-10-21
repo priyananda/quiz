@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Shenoy.Quiz
 {
@@ -38,13 +39,28 @@ namespace Shenoy.Quiz
                 {m_btn20, m_btn21, m_btn22, m_btn23},
                 {m_btn30, m_btn31, m_btn32, m_btn33},
             };
-            InitState();
-            RenderVisualGrid();
+            DisableAll();
+            m_timer.Interval = TimeSpan.FromMilliseconds(500);
+            m_timer.Tick += OnTimerTick;
         }
 
-        private void InitState()
+        private void OnTimerTick(object sender, EventArgs e)
+        {
+            m_progress.Value = m_progress.Value + 1;
+            if (m_progress.Value >= m_progress.Maximum)
+            {
+                StopTimer(sender, null);
+                DisableAll();
+                return;
+            }
+        }
+
+        private void InitState(int v)
         {
             m_currentMatrix = ConnectMatrixRepository.GetMatrix(0);
+            RenderVisualGrid();
+            StartTimer(null, null);
+            m_progress.Value = 0;
         }
 
         private void RenderVisualGrid()
@@ -98,7 +114,7 @@ namespace Shenoy.Quiz
         {
             if (image != null)
                 image.Visibility = Visibility.Hidden;
-            InitState();
+            InitState(v);
         }
         private void OnToggle(object sender, RoutedEventArgs e)
         {
@@ -118,18 +134,50 @@ namespace Shenoy.Quiz
             }
         }
 
-        private void UnCheckAll()
+        private void ForAll(Action<ToggleButton> action)
         {
             for (int irow = 0; irow < 4; ++irow)
                 for (int icol = 0; icol < 4; ++icol)
-                {
-                    m_buttons[irow, icol].IsChecked = false;
-                }
+                    action(m_buttons[irow, icol]);
+        }
+
+        private void UnCheckAll()
+        {
+            ForAll((x) => x.IsChecked = false);
+        }
+
+        private void DisableAll()
+        {
+            ForAll((x) => x.IsEnabled = false);
+        }
+
+        private void EnableAll()
+        {
+            ForAll((x) => x.IsEnabled = true);
+        }
+
+        private void StartTimer(object sender, RoutedEventArgs e)
+        {
+            if (!m_timer.IsEnabled)
+            {
+                m_timer.IsEnabled = true;
+                m_timer.Start();
+            }
+        }
+
+        private void StopTimer(object sender, RoutedEventArgs e)
+        {
+            if (m_timer.IsEnabled)
+            {
+                m_timer.IsEnabled = false;
+                m_timer.Stop();
+            }
         }
 
         private ConnectMatrix m_currentMatrix;
         private ToggleButton[,] m_buttons = new ToggleButton[4,4];
         private Brush[] m_brushes;
         private HashSet<string> m_selectedItems = new HashSet<string>();
+        private DispatcherTimer m_timer = new DispatcherTimer();
     }
 }

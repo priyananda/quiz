@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shenoy.Quiz"
         mc:Ignorable="d"
-        Title="Chakraview 2016 - Round 4" Width="1152" Height="750" ResizeMode="NoResize">
+        Title="Chakraview 2016 - Round 4" Width="1152" Height="750" ResizeMode="NoResize" FontSize="30">
     <Grid Width="1152" Height="720" Name="outerGrid" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -37,19 +37,34 @@
         <Image MouseUp="ShowSet1" Source="Resources/connect-q6.png" Width="100" Height="100" Margin="40,560,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Grid Width="600" Height="600" Margin="300,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Button Click="StartTimer" Margin="216,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/play.png"/>
+            </Button.Background>
+        </Button>
+
+        <ProgressBar Minimum="0" Maximum="120" Width="600" Height="40" HorizontalAlignment="Center"
+                     VerticalAlignment="Top" Margin="50,100,0,0" Name="m_progress"/>
+
+        <Button Click="StopTimer" Margin="933,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/stop.png"/>
+            </Button.Background>
+        </Button>
+
+        <Grid Width="600" Height="600" Margin="380,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
-                <RowDefinition Height="150" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="120" />
             </Grid.RowDefinitions>
             
             <ToggleButton Grid.Row="0" Grid.Column="0" Content="A" Name="m_btn00" Click="OnToggle" />

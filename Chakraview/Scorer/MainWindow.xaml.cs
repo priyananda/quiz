@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Shenoy.Quiz
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -28,12 +25,12 @@ namespace Shenoy.Quiz
 
         private void ShowPrelims(object sender, RoutedEventArgs e)
         {
-            new PrelimsDialog().ShowDialog();
+            //new PrelimsDialog().ShowDialog();
         }
 
         private void ShowFinals(object sender, RoutedEventArgs e)
         {
-
+            new FinalsDialog().ShowDialog();
         }
     }
 }
