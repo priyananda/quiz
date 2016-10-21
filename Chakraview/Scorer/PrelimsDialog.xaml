@@ -4,17 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shenoy.Quiz"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
         mc:Ignorable="d"
-        Title="PrelimsDialog" Height="600" Width="600">
+        Title="Prelims Score" Height="600" Width="600">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="200" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
+        <ScrollViewer>
+            <xcdg:DataGridControl Name="m_dataGrid">
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView />
+                </xcdg:DataGridControl.View>
+            </xcdg:DataGridControl>
+        </ScrollViewer>
+        <Button Width="75" HorizontalAlignment="Right" Grid.Row="1" Content="Update" Click="UpdateServer"/>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Shenoy.Quiz.Backend;
+using Shenoy.Quiz.Connector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,38 @@ namespace Shenoy.Quiz
         public PrelimsDialog()
         {
             InitializeComponent();
+
+            m_teams = PrelimsService.GetTeams();
+            PadTeams();
+            m_dataGrid.ItemsSource = m_teams;
         }
+
+        private void PadTeams()
+        {
+            while (m_teams.Count <= 100)
+            {
+                TeamInfo info = new TeamInfo();
+                info.TeamId = 0;
+                m_teams.Add(info);
+            }
+        }
+
+        private List<TeamInfo> UnpadTeams()
+        {
+            var realTeams = new List<TeamInfo>();
+            foreach (var team in m_teams)
+                if (team.TeamId != 0)
+                    realTeams.Add(team);
+            return realTeams;
+        }
+
+        private void UpdateServer(object sender, RoutedEventArgs e)
+        {
+            List<TeamInfo> realTeams = UnpadTeams();
+            if (realTeams.Count > 0)
+                PrelimsService.SetTeams(realTeams);
+        }
+
+        private List<TeamInfo> m_teams;
     }
 }

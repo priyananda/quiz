@@ -25,7 +25,7 @@ namespace Shenoy.Quiz
 
         private void ShowPrelims(object sender, RoutedEventArgs e)
         {
-            //new PrelimsDialog().ShowDialog();
+            new PrelimsDialog().ShowDialog();
         }
 
         private void ShowFinals(object sender, RoutedEventArgs e)
