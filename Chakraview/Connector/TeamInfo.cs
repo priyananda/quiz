@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Shenoy.Quiz.Backend
 {
-    public class TeamInfo
+    public class TeamInfo : INotifyPropertyChanged
     {
         public long TeamId { get; set; }
         public String FirstPersonName { get; set; }
         public String SecondPersonName { get; set; }
         public bool IsFinalist { get; set; }
-
         public long Score { get; set; }
+
+        public TeamInfo()
+        {
+            TeamId = 0;
+            FirstPersonName = "";
+            SecondPersonName = "";
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void SerializeTo(Dictionary<string, object> propertyBag)
         {

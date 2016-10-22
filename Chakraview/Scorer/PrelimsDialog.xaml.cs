@@ -27,16 +27,21 @@ namespace Shenoy.Quiz
 
             m_teams = PrelimsService.GetTeams();
             PadTeams();
-            m_dataGrid.ItemsSource = m_teams;
+
+            m_dataGrid.DataContext = this;
+        }
+
+        public List<TeamInfo> ListOfTeams
+        {
+            get { return m_teams; }
+            set { m_teams = value; }
         }
 
         private void PadTeams()
         {
             while (m_teams.Count <= 100)
             {
-                TeamInfo info = new TeamInfo();
-                info.TeamId = 0;
-                m_teams.Add(info);
+                m_teams.Add(new TeamInfo());
             }
         }
 

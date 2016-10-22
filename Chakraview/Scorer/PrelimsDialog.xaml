@@ -14,7 +14,7 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ScrollViewer>
-            <xcdg:DataGridControl Name="m_dataGrid">
+            <xcdg:DataGridControl Name="m_dataGrid" ItemsSource="{Binding ListOfTeams, Mode=TwoWay}">
                 <xcdg:DataGridControl.View>
                     <xcdg:TableView />
                 </xcdg:DataGridControl.View>
