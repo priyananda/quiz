@@ -22,52 +22,52 @@
         <Image MouseUp="ShowSet1" Source="Resources/connect-q1.png" Width="100" Height="100" Margin="40,60,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Image MouseUp="ShowSet1" Source="Resources/connect-q2.png" Width="100" Height="100" Margin="40,160,0,0"
+        <Image MouseUp="ShowSet2" Source="Resources/connect-q2.png" Width="100" Height="100" Margin="40,160,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Image MouseUp="ShowSet1" Source="Resources/connect-q3.png" Width="100" Height="100" Margin="40,260,0,0"
+        <Image MouseUp="ShowSet3" Source="Resources/connect-q3.png" Width="100" Height="100" Margin="40,260,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Image MouseUp="ShowSet1" Source="Resources/connect-q4.png" Width="100" Height="100" Margin="40,360,0,0"
+        <Image MouseUp="ShowSet4" Source="Resources/connect-q4.png" Width="100" Height="100" Margin="40,360,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Image MouseUp="ShowSet1" Source="Resources/connect-q5.png" Width="100" Height="100" Margin="40,460,0,0"
+        <Image MouseUp="ShowSet5" Source="Resources/connect-q5.png" Width="100" Height="100" Margin="40,460,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Image MouseUp="ShowSet1" Source="Resources/connect-q6.png" Width="100" Height="100" Margin="40,560,0,0"
+        <Image MouseUp="ShowSet6" Source="Resources/connect-q6.png" Width="100" Height="100" Margin="40,560,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <Button Click="StartTimer" Margin="216,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
+        <Button Click="StartTimer" Margin="234,73,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
             <Button.Background>
                 <ImageBrush ImageSource="Resources/play.png"/>
             </Button.Background>
         </Button>
 
-        <ProgressBar Minimum="0" Maximum="120" Width="600" Height="40" HorizontalAlignment="Center"
-                     VerticalAlignment="Top" Margin="50,100,0,0" Name="m_progress"/>
+        <ProgressBar Minimum="0" Maximum="190" Width="600" Height="40" HorizontalAlignment="Center"
+                     VerticalAlignment="Top" Margin="308,83,244,0" Name="m_progress"/>
 
-        <Button Click="StopTimer" Margin="933,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
+        <Button Click="StopTimer" Margin="932,83,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" >
             <Button.Background>
                 <ImageBrush ImageSource="Resources/stop.png"/>
             </Button.Background>
         </Button>
 
-        <Image Source="Resources/connect-q6.png" Width="250" Height="250" Margin="216,160,0,0"
+        <Image Source="Resources/connect-q6.png" Width="300" Height="300" Margin="157,128,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" Name="m_clueImage1" />
 
-        <Image Source="Resources/connect-q6.png" Width="250" Height="250" Margin="216,433,0,0"
+        <Image Source="Resources/connect-q6.png" Width="300" Height="300" Margin="157,428,0,-8"
                HorizontalAlignment="Left" VerticalAlignment="Top" Name="m_clueImage2" />
 
-        <Image Source="Resources/connect-q6.png" Width="250" Height="250" Margin="500,160,0,0"
+        <Image Source="Resources/connect-q6.png" Width="300" Height="300" Margin="462,128,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" Name="m_clueImage3" />
 
-        <Image Source="Resources/connect-q6.png" Width="250" Height="250" Margin="500,433,0,0"
+        <Image Source="Resources/connect-q6.png" Width="300" Height="300" Margin="462,428,0,-8"
                HorizontalAlignment="Left" VerticalAlignment="Top" Name="m_clueImage4" />
 
-        <Image Source="Resources/connect-q6.png" Width="250" Height="250" Margin="791,160,0,0"
+        <Image Source="Resources/connect-q6.png" Width="300" Height="300" Margin="767,128,0,0"
                HorizontalAlignment="Left" VerticalAlignment="Top" Name="m_clueImage5" />
 
-        <Border BorderBrush="Black" BorderThickness="4" CornerRadius="125" Width="250" Height="250" Margin="848,433,0,0" 
+        <Border BorderBrush="Black" BorderThickness="4" CornerRadius="125" Width="250" Height="250" Margin="791,433,0,0" 
                HorizontalAlignment="Left" VerticalAlignment="Top">
             <Label Content="25" FontSize="120" FontFamily="Segoe UI"
                Name="m_txtPoints" HorizontalAlignment="Center" VerticalAlignment="Center" />
