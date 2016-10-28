@@ -47,7 +47,7 @@ namespace Shenoy.Quiz
         private void OnTimerTick(object sender, EventArgs e)
         {
             m_progress.Value = m_progress.Value + 1;
-            if (m_progress.Value >= m_progress.Maximum)
+            if (m_progress.Value >= m_progress.Maximum || m_currentMatrix.Points == 20)
             {
                 StopTimer(sender, null);
                 DisableAll();
@@ -82,6 +82,7 @@ namespace Shenoy.Quiz
                     }
                     m_buttons[irow, icol].IsChecked = false;
                 }
+            m_txtPoints.Content = m_currentMatrix.Points.ToString();
         }
 
         private void ShowSet1(object sender, MouseEventArgs me)

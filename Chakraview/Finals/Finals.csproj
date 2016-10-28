@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\ConnectMatrix.cs" />
     <Compile Include="Model\ConnectMatrixRepository.cs" />
+    <Compile Include="Round3ClueManager.cs" />
     <Compile Include="Round3Window.xaml.cs">
       <DependentUpon>Round3Window.xaml</DependentUpon>
     </Compile>

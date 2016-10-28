@@ -52,6 +52,12 @@
             </Button.Background>
         </Button>
 
+        <Border BorderBrush="Black" BorderThickness="4" CornerRadius="125" Width="250" Height="250" Margin="875,310,0,0" 
+               HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="25" FontSize="120" FontFamily="Segoe UI"
+               Name="m_txtPoints" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+
         <Grid Width="600" Height="600" Margin="380,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120" />

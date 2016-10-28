@@ -38,6 +38,12 @@ namespace Shenoy.Quiz.Model
         {
             m_foundGroup[group] = true;
             m_completedRows++;
+            if (m_completedRows == 3)
+            {
+                m_completedRows = 4;
+                for (int igroup = 0; igroup < m_foundGroup.Length; ++igroup)
+                    m_foundGroup[igroup] = true;
+            }
             GenerateVisualGrid();
         }
 
@@ -79,6 +85,11 @@ namespace Shenoy.Quiz.Model
             for (; irow < 4; ++irow)
                 for (int icol = 0; icol < 4; ++icol)
                     m_visualGrid[irow, icol] = jumble[ilist++];
+        }
+
+        public int Points
+        {
+            get { return m_completedRows * 5; }
         }
 
         private void Shuffle<T>(IList<T> list)

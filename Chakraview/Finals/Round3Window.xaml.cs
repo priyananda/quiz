@@ -43,28 +43,29 @@ namespace Shenoy.Quiz
             m_progress.Value = m_progress.Value + 1;
             if (m_progress.Value >= m_progress.Maximum)
             {
+                m_txtPoints.Content = "0";
                 StopTimer(sender, null);
                 return;
             }
             int points = 25;
             if (m_progress.Value > 1)
                 m_clueImages[0].Visibility = Visibility.Visible;
-            if (m_progress.Value > 25)
+            if (m_progress.Value > TICKS_PER_CLUE * 1)
             {
                 m_clueImages[1].Visibility = Visibility.Visible;
                 points -= 5;
             }
-            if (m_progress.Value > 50)
+            if (m_progress.Value > TICKS_PER_CLUE * 2)
             {
                 m_clueImages[2].Visibility = Visibility.Visible;
                 points -= 5;
             }
-            if (m_progress.Value > 75)
+            if (m_progress.Value > TICKS_PER_CLUE * 3)
             {
                 m_clueImages[3].Visibility = Visibility.Visible;
                 points -= 5;
             }
-            if (m_progress.Value > 100)
+            if (m_progress.Value > TICKS_PER_CLUE * 4)
             {
                 m_clueImages[4].Visibility = Visibility.Visible;
                 points -= 5;
@@ -74,8 +75,13 @@ namespace Shenoy.Quiz
 
         private void InitState()
         {
-            foreach (var image in m_clueImages)
+            for (int iclue = 0; iclue < m_clueImages.Length; ++iclue)
+            {
+                var image = m_clueImages[iclue];
                 image.Visibility = Visibility.Hidden;
+                if (m_currentSet > -1)
+                    image.Source = Round3ClueManager.GetClue(m_currentSet, iclue);
+            }
             m_progress.Value = 0;
             m_txtPoints.Content = "25";
         }
@@ -137,5 +143,6 @@ namespace Shenoy.Quiz
         private int m_currentSet = -1;
         private Image[] m_clueImages;
         private DispatcherTimer m_timer = new DispatcherTimer();
+        const int TICKS_PER_CLUE = 18 * 2;
     }
 }
