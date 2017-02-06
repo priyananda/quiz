@@ -147,6 +147,41 @@
     <Resource Include="Resources\play.png" />
     <Resource Include="Resources\stop.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="R3Data\s1c1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="R3Data\s1c2.png" />
+    <Resource Include="R3Data\s1c3.png" />
+    <Resource Include="R3Data\s1c4.png" />
+    <Resource Include="R3Data\s1c5.png" />
+    <Resource Include="R3Data\s2c1.png" />
+    <Resource Include="R3Data\s2c2.png" />
+    <Resource Include="R3Data\s2c3.png" />
+    <Resource Include="R3Data\s2c4.png" />
+    <Resource Include="R3Data\s2c5.png" />
+    <Resource Include="R3Data\s3c1.png" />
+    <Resource Include="R3Data\s3c2.png" />
+    <Resource Include="R3Data\s3c3.png" />
+    <Resource Include="R3Data\s3c4.png" />
+    <Resource Include="R3Data\s3c5.png" />
+    <Resource Include="R3Data\s4c1.png" />
+    <Resource Include="R3Data\s4c2.png" />
+    <Resource Include="R3Data\s4c3.png" />
+    <Resource Include="R3Data\s4c4.png" />
+    <Resource Include="R3Data\s4c5.png" />
+    <Resource Include="R3Data\s5c1.png" />
+    <Resource Include="R3Data\s5c2.png" />
+    <Resource Include="R3Data\s5c3.png" />
+    <Resource Include="R3Data\s5c4.png" />
+    <Resource Include="R3Data\s5c5.png" />
+    <Resource Include="R3Data\s6c1.png" />
+    <Resource Include="R3Data\s6c2.png" />
+    <Resource Include="R3Data\s6c3.png" />
+    <Resource Include="R3Data\s6c4.png" />
+    <Resource Include="R3Data\s6c5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
