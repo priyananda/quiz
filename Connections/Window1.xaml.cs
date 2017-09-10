@@ -12,21 +12,19 @@ namespace ConnQuiz.UI
             
             this.Left = 40;
             this.Top = 0;
-            //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
-            //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight - 100;
             this.Width = 1024;
             this.Height = 768 - 100;
 
             Questions.Load("qdata.xml");
             Questions.DirectionChange += new System.Action(Questions_DirectionChange);
             this.Closing += new System.ComponentModel.CancelEventHandler(Window1_Closing);
-            //LayoutGen.Generate("diagram.xml");
+            LayoutGen.Generate("diagram.xml");
             MyDesigner.Open_Executed(null, null);
         }
 
         void Window1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (MessageBox.Show("Really Close?", "Quiz 114 App", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+            if (MessageBox.Show("Really Close?", "Quiz 218", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
                 e.Cancel = true;
         }
 

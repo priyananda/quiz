@@ -43,20 +43,19 @@ namespace ConnQuiz.Model
         }
         public virtual void Load(XElement elem)
         {
-            if (this.Type != QuestionType.Concept)
-            {
-                var answerNode = elem.Element("answer");
-                int slideid = Int32.Parse(answerNode.Attribute("slideid").Value);
-                m_answer = new Answer(this, slideid);
-                if (elem.Attribute("e") != null)
-                    m_fExhaustive = true;
-                if (elem.Attribute("s") != null)
-                    m_fInOrder = true;
-                if (elem.Attribute("y") != null)
-                    m_fSilly = true;
-                if (elem.Attribute("l") != null)
-                    m_fLimited = true;
-            }
+            var answerNode = elem.Element("answer");
+            int slideid = Int32.Parse(answerNode.Attribute("slideid").Value);
+            m_answer = new Answer(this, slideid);
+            if (elem.Attribute("e") != null)
+                m_fExhaustive = true;
+            if (elem.Attribute("s") != null)
+                m_fInOrder = true;
+            if (elem.Attribute("y") != null)
+                m_fSilly = true;
+            if (elem.Attribute("l") != null)
+                m_fLimited = true;
+            if (elem.Attribute("label") != null)
+                m_label = elem.Attribute("label").Value;
             if (this.Type != QuestionType.StagedConnect)
             {
                 if (elem.Attribute("points") != null)
@@ -74,6 +73,13 @@ namespace ConnQuiz.Model
                     Answered(this);
                 Log.SaveState();
             }
+        }
+
+        public String GetText()
+        {
+            if (m_type == QuestionType.Concept)
+                return m_label;
+            return String.Format("Q{0}\n{1}|-{2}", m_id, this.Points, "0");
         }
         public abstract void Advance();
 
@@ -102,6 +108,7 @@ namespace ConnQuiz.Model
         private bool m_fSilly;
         private bool m_fLimited;
         protected int m_Points = Constants.PointsForSimpleQ;
+        private String m_label;
     }
 
     class Questions

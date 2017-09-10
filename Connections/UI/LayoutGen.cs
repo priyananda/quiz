@@ -15,11 +15,11 @@ namespace ConnQuiz.UI
             XElement elemRoot;
             XElement designerElems;
             XElement connsElems;
-            bool fReload = true;
+            bool fReload = false;
 
             LoadTemplate();
 
-            if (!File.Exists(outfilename))
+            if (File.Exists(outfilename))
                 fReload = true;
 
             if (!fReload)
@@ -103,7 +103,7 @@ namespace ConnQuiz.UI
                 qelem.Element("ID").Value = questionGuids[question.Id];
                 qelem.Element("Question").Value = question.Id + "";
                 qelem.Element("zIndex").Value = question.Id + "";
-                RandomizeLocation(rand, qelem);
+                SetLocation(rand, qelem, question.Id);
                 designerElems.Add(qelem);
 
                 if (question.Type == QuestionType.Simple)
@@ -197,7 +197,7 @@ namespace ConnQuiz.UI
                 }
             }
 
-            return false;
+            return true;
         }
 
         private static string GuidForQuestion(XElement designerElems, int qid)
@@ -222,10 +222,27 @@ namespace ConnQuiz.UI
             return connElem;
         }
 
-        private static void RandomizeLocation(Random rand, XElement qelem)
+        private static void SetLocation(Random rand, XElement qelem, int qid)
         {
-            int top = (int)(500 * rand.NextDouble());
-            int left = (int)(700 * rand.NextDouble());
+            const int centerX = 400;
+            const int centerY = 350;
+            const int radius = 200;
+            int top = 0, left = 0;
+            if (qid < 9)
+            {
+                top = (int)(centerY - radius * Math.Cos((qid - 1) * Math.PI / 4.0));
+                left = (int)(centerX + radius * Math.Sin((qid - 1) * Math.PI / 4.0));
+            }
+            else if (qid == 9)
+            {
+                top = centerY;
+                left = centerX;
+            }
+            else
+            {
+                top = (int)(2 * centerY * rand.NextDouble());
+                left = (int)(2 * centerX * rand.NextDouble());
+            }
             qelem.Element("Left").Value = left + "";
             qelem.Element("Top").Value = top + "";
         }

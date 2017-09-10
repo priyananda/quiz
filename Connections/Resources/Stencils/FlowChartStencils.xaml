@@ -315,7 +315,7 @@
                 </ControlTemplate>
             </s:DesignerItem.DragThumbTemplate>
         </Path>
-            <TextBlock Text="90" FontFamily="Segoe UI" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="90" FontFamily="Segoe UI" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         </Grid>
 
         <Grid>
@@ -326,7 +326,7 @@
                 </ControlTemplate>
             </s:DesignerItem.DragThumbTemplate>
             </Path>
-            <TextBlock Text="90" FontFamily="Segoe UI" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="90" FontFamily="Segoe UI" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         </Grid>
 
         <Path Style="{StaticResource SimpleQ}" ToolTip="Staged Connect">

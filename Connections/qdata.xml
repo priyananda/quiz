@@ -1,0 +1,154 @@
+<questions>
+  <question id="1" type="concept" label="Etymology">
+    <answer slideid="1" />
+  </question>
+  <question id="2" type="concept" label="Units / Standards">
+    <answer slideid="2" />
+  </question>
+  <question id="3" type="concept" label="American Poetry">
+    <answer slideid="3" />
+  </question>
+  <question id="4" type="concept" label="Space">
+    <answer slideid="4" />
+  </question>
+  <question id="5" type="concept" label="Geography">
+    <answer slideid="5" />
+  </question>
+  <question id="6" type="concept" label="Pot Pourri">
+    <answer slideid="6" />
+  </question>
+  <question id="7" type="concept" label="Movies">
+    <answer slideid="7" />
+  </question>
+  <question id="8" type="concept" label="Technology">
+    <answer slideid="8" />
+  </question>  
+  
+  <question id="9" type="connect"> 
+    <clueset>
+		<clue slideid="-1" connection="1" />
+		<clue slideid="-1" connection="2" />
+		<clue slideid="-1" connection="3" />
+		<clue slideid="-1" connection="4" />
+		<clue slideid="-1" connection="5" />
+		<clue slideid="-1" connection="6" />
+		<clue slideid="-1" connection="7" />
+		<clue slideid="-1" connection="8" />
+	</clueset>
+    <answer slideid="9" />
+  </question>
+
+  <question id="10" type="simple" related="1"> <clue slideid="10" /> <answer slideid="11" /> </question>
+  <question id="11" type="simple" related="1"> <clue slideid="12" /> <answer slideid="13" /> </question>
+  <question id="12" type="simple" related="1"> <clue slideid="14" /> <answer slideid="15" /> </question>
+  <question id="13" type="simple" related="2"> <clue slideid="16" /> <answer slideid="17" /> </question>
+  <question id="14" type="simple" related="2"> <clue slideid="18" /> <answer slideid="19" /> </question>
+  <question id="15" type="simple" related="2"> <clue slideid="20" /> <answer slideid="21" /> </question>
+  <question id="16" type="simple" related="2"> <clue slideid="22" /> <answer slideid="23" /> </question>
+  <question id="17" type="simple" related="1"> <clue slideid="24" /> <answer slideid="25" /> </question>
+  <question id="18" type="simple" related="3"> <clue slideid="26" /> <answer slideid="27" /> </question>
+  <question id="19" type="simple" related="3"> <clue slideid="28" /> <answer slideid="29" /> </question>
+  <question id="20" type="simple" related="3"> <clue slideid="30" /> <answer slideid="31" /> </question>
+  <question id="21" type="simple" related="4"> <clue slideid="32" /> <answer slideid="33" /> </question>
+  <question id="22" type="simple" related="4"> <clue slideid="34" /> <answer slideid="35" /> </question>
+
+  <question id="23" type="connect" related="5">
+    <clueset>
+      <clue slideid="36" />
+    </clueset>
+    <answer slideid="37" />
+  </question>
+  
+  <question id="24" type="connect" related="5">
+    <clueset>
+      <clue slideid="38" />
+    </clueset>
+    <answer slideid="39" />
+  </question>
+  
+  <question id="25" type="simple" related="5"> <clue slideid="40" /> <answer slideid="41" /> </question>
+  <question id="26" type="simple" related="5"> <clue slideid="42" /> <answer slideid="43" /> </question>
+  <question id="27" type="simple" related="5"> <clue slideid="44" /> <answer slideid="45" /> </question>
+  <question id="28" type="simple" related="5"> <clue slideid="46" /> <answer slideid="47" /> </question>
+  <question id="29" type="simple" related="5"> <clue slideid="48" /> <answer slideid="49" /> </question>
+  <question id="30" type="simple" related="5"> <clue slideid="50" /> <answer slideid="51" /> </question>
+  <question id="31" type="simple" related="6"> <clue slideid="52" /> <answer slideid="53" /> </question>
+
+  <question id="32" type="connect" related="6">
+    <clueset>
+      <clue slideid="54" />
+    </clueset>
+    <answer slideid="55" />
+  </question>
+
+  <question id="33" type="simple" related="6"> <clue slideid="56" /> <answer slideid="57" /> </question>
+  <question id="34" type="simple" related="6"> <clue slideid="58" /> <answer slideid="59" /> </question>
+  <question id="35" type="simple" related="7">
+	<clue slideid="60">
+		<video src="data\\q35.mp4" x="100" y="100" w="540" h="360" />
+	</clue>
+	<answer slideid="61" />
+  </question>
+  <question id="36" type="simple" related="6"> <clue slideid="62" /> <answer slideid="63" /> </question>
+
+  <question id="37" type="connect" related="6">
+    <clueset>
+      <clue slideid="64" />
+    </clueset>
+    <answer slideid="65" />
+  </question>
+
+  <question id="38" type="simple" related="7"> <clue slideid="66" /> <answer slideid="67" /> </question>
+  <question id="39" type="simple" related="7"> <clue slideid="68" /> <answer slideid="69" /> </question>
+  <question id="40" type="simple" related="7"> <clue slideid="70" /> <answer slideid="71" /> </question>
+  
+  <question id="41" type="stagedconnect" y="1" related="7">
+    <clueset>
+      <clue slideid="72" />
+    </clueset>
+    <clueset>
+      <clue slideid="73" />
+	  <clue slideid="74" />
+	  <clue slideid="75" />
+    </clueset>
+    <clueset>
+      <clue slideid="76" />
+    </clueset>
+    <answer slideid="77" />
+  </question>
+
+  <question id="42" type="simple" related="7"> <clue slideid="78" /> <answer slideid="79" /> </question>
+  
+  <question id="43" type="connect" related="8">
+    <clueset>
+      <clue slideid="80" />
+	  <clue slideid="-1" connection="42"/>
+    </clueset>
+    <answer slideid="81" />
+  </question>
+
+  <question id="44" type="connect" related="8">
+    <clueset>
+      <clue slideid="82" />
+	  <clue slideid="83" />
+    </clueset>
+    <answer slideid="84" />
+  </question>
+  
+  <question id="45" type="connect" related="8">
+    <clueset>
+      <clue slideid="85" />
+	  <clue slideid="86" />
+    </clueset>
+    <answer slideid="87" />
+  </question>
+  
+  <question id="46" type="connect" related="1">
+    <clueset>
+      <clue slideid="88" />
+	  <clue slideid="-1" connection="13"/>
+    </clueset>
+    <answer slideid="89" />
+  </question>
+ 
+</questions>

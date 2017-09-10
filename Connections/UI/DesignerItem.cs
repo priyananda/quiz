@@ -32,13 +32,7 @@ namespace ConnQuiz.UI
                 if (questionId == value)
                     return;
                 questionId = value;
-                Grid grid = this.Content as Grid;
-                if (grid != null)
-                {
-                    TextBlock tb = grid.Children[1] as TextBlock;
-                    if (tb != null)
-                        tb.Text = "" + questionId;
-                }
+                SetText();
                 Questions.Get(questionId).Answered += new Action<Question>(DesignerItem_Answered);
             }
         }
@@ -228,6 +222,29 @@ namespace ConnQuiz.UI
                 LinearGradientBrush lgb = new LinearGradientBrush(
                     Colors.White, color, 90);
                 path.Fill = lgb;
+            }
+        }
+        private void SetText()
+        {
+            Grid grid = this.Content as Grid;
+            if (grid == null)
+            {
+                grid = new Grid();
+                UIElement currentContent = this.Content as UIElement;
+                this.Content = null;
+                grid.Children.Add(currentContent);
+                grid.Children.Add(new TextBlock());
+                this.Content = grid;
+            }
+
+            TextBlock tb = grid.Children[1] as TextBlock;
+            if (tb != null)
+            {
+                Question q = Questions.Get(questionId);
+                tb.Text = q.GetText();
+                tb.FontSize = q.Type == QuestionType.Concept ? 10 : 16;
+                tb.HorizontalAlignment = HorizontalAlignment.Center;
+                tb.VerticalAlignment = VerticalAlignment.Center;
             }
         }
     }
