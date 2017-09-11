@@ -13,12 +13,12 @@ namespace ConnQuiz.UI
             this.Left = 40;
             this.Top = 0;
             this.Width = 1024;
-            this.Height = 768 - 100;
+            this.Height = 900;
 
             Questions.Load("qdata.xml");
             Questions.DirectionChange += new System.Action(Questions_DirectionChange);
             this.Closing += new System.ComponentModel.CancelEventHandler(Window1_Closing);
-            LayoutGen.Generate("diagram.xml");
+            //LayoutGen.Generate("diagram.xml");
             MyDesigner.Open_Executed(null, null);
         }
 

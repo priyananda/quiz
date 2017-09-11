@@ -34,6 +34,7 @@ namespace ConnQuiz.UI
                 questionId = value;
                 SetText();
                 Questions.Get(questionId).Answered += new Action<Question>(DesignerItem_Answered);
+                Questions.OnPointsUpdate += new Action(SetText);
             }
         }
 
@@ -210,22 +211,39 @@ namespace ConnQuiz.UI
         }
         private void ChangeColor(Color color)
         {
+            if (Questions.Get(this.QuestionId).Type == QuestionType.Concept && color != Colors.Green)
+                return;
+
             Path path = this.Content as Path;
+            Ellipse ellipse = null;
             if (path == null)
             {
                 Grid grid = this.Content as Grid;
                 if (grid != null)
+                {
                     path = grid.Children[0] as Path;
+                    ellipse = grid.Children[0] as Ellipse;
+                }
             }
-            if (path != null)
+            if (path != null || ellipse != null)
             {
                 LinearGradientBrush lgb = new LinearGradientBrush(
                     Colors.White, color, 90);
-                path.Fill = lgb;
+                if (path != null)
+                    path.Fill = lgb;
+                else
+                    ellipse.Fill = lgb;
             }
         }
         private void SetText()
         {
+            bool clear = false;
+            string sId = this.ID.ToString();
+            if (sId == "37d74ba0-0c17-404a-aacb-468bde0c5ea3" || sId == "b1454fbe-cb51-4f36-beeb-4a0a3e84c34d" || sId == "31f4fe65-ad0b-4c76-8b12-13824ae83a96")
+            {
+                clear = true;
+            }
+
             Grid grid = this.Content as Grid;
             if (grid == null)
             {
@@ -241,7 +259,7 @@ namespace ConnQuiz.UI
             if (tb != null)
             {
                 Question q = Questions.Get(questionId);
-                tb.Text = q.GetText();
+                tb.Text = clear ? "" : q.GetText();
                 tb.FontSize = q.Type == QuestionType.Concept ? 10 : 16;
                 tb.HorizontalAlignment = HorizontalAlignment.Center;
                 tb.VerticalAlignment = VerticalAlignment.Center;

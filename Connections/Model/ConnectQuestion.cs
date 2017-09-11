@@ -19,7 +19,7 @@ namespace ConnQuiz.Model
                 int ret = m_Points;
                 foreach (var clue in m_clueset)
                     if (!clue.Unlocked)
-                        ret += clue.Source.SourceQ.Points;
+                        ret += clue.Source.Points;
                 return ret;
             }
         }

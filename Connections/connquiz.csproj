@@ -169,6 +169,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\ConceptUnlocker.cs" />
+    <Compile Include="Model\Questions.cs" />
     <Compile Include="UI\LayoutGen.cs" />
     <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Clue.cs" />

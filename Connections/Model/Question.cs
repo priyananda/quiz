@@ -79,8 +79,20 @@ namespace ConnQuiz.Model
         {
             if (m_type == QuestionType.Concept)
                 return m_label;
-            return String.Format("Q{0}\n{1}|-{2}", m_id, this.Points, "0");
+            bool hasNegative = (m_type == QuestionType.StagedConnect || m_id == 9);
+
+            return String.Format("Q{0}\n{1}{2}{3}", m_id, this.Points,
+                hasNegative ? "|" : "",
+                hasNegative ? CalcNegative().ToString() : "");
         }
+
+        private int CalcNegative()
+        {
+            int half = (this.Points / 2);
+            half -= half % 5;
+            return -half;
+        }
+
         public abstract void Advance();
 
         public virtual int Points { get { return m_Points; } }
@@ -109,55 +121,5 @@ namespace ConnQuiz.Model
         private bool m_fLimited;
         protected int m_Points = Constants.PointsForSimpleQ;
         private String m_label;
-    }
-
-    class Questions
-    {
-        public static Question Get(int i)
-        {
-            return m_questions[i];
-        }
-        public static void Load(string filename)
-        {
-            XElement questions = XElement.Load(filename);
-            var qkids = questions.Elements("question");
-            m_questions = new Question[qkids.Count() + 1];
-            int i = 1;
-            foreach (var qelem in qkids)
-            {
-                m_questions[i] = Question.Create(qelem);
-                m_questions[i].Answered += new Action<Question>(OnQuestionAnswered);
-                if (!m_questions[i++].AllPlay)
-                    ++m_csingleplay;
-            }
-            m_chalfway = m_csingleplay / 2;
-            Clue.ResolveConnections();
-        }
-
-        public static IEnumerable<Question> QList
-        {
-            get { return m_questions; }
-        }
-        public static int Count
-        {
-            get { return m_questions.Length; }
-        }
-        public static Color ColorForQuestion(int qid)
-        {
-            float x = 0.1f + (qid) / (50.0f + m_questions.Length);
-            return Color.FromScRgb(1.0f, x, x, x);
-        }
-        private static void OnQuestionAnswered(Question obj)
-        {
-            if (!obj.AllPlay)
-                m_csingleplay--;
-            if (m_csingleplay == m_chalfway)
-                if (DirectionChange != null)
-                    DirectionChange();
-        }
-        private static Question[] m_questions;
-        private static int m_csingleplay;
-        private static int m_chalfway;
-        public static event Action DirectionChange;
     }
 }

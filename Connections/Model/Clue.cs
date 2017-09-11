@@ -6,6 +6,12 @@ using System.Xml.Linq;
 
 namespace ConnQuiz.Model
 {
+    struct ConnectionInfo
+    {
+        public int connSrc;
+        public int points;
+    }
+
     class Clue : ObjectWithSlide
     {
         public static Clue Create(Question q, XElement elem)
@@ -14,8 +20,13 @@ namespace ConnQuiz.Model
             var ret = new Clue(slideid, q);
             if (elem.Attribute("connection") != null)
             {
-                int connSrc = Int32.Parse(elem.Attribute("connection").Value);
-                m_unresolvedConnections[ret] = connSrc;
+                ConnectionInfo info = new ConnectionInfo();
+                info.connSrc = Int32.Parse(elem.Attribute("connection").Value);
+                if (elem.Attribute("points") != null)
+                    info.points = Int32.Parse(elem.Attribute("points").Value);
+                else
+                    info.points = -1;
+                m_unresolvedConnections[ret] = info;
             }
             ret.LoadVideoData(elem);
             return ret;
@@ -26,8 +37,8 @@ namespace ConnQuiz.Model
                 return;
             foreach(var clue in m_unresolvedConnections.Keys)
             {
-                int qid = m_unresolvedConnections[clue];
-                Connection conn = new Connection(Questions.Get(qid).Ans, clue);
+                int qid = m_unresolvedConnections[clue].connSrc;
+                Connection conn = new Connection(Questions.Get(qid).Ans, clue, m_unresolvedConnections[clue].points);
                 clue.m_connection = conn;
             }
             m_unresolvedConnections = null;
@@ -63,6 +74,6 @@ namespace ConnQuiz.Model
         private Question m_question;
         private Connection m_connection;
 
-        private static Dictionary<Clue, int> m_unresolvedConnections = new Dictionary<Clue, int>();
+        private static Dictionary<Clue, ConnectionInfo> m_unresolvedConnections = new Dictionary<Clue, ConnectionInfo>();
     }
 }

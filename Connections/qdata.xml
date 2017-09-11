@@ -26,14 +26,14 @@
   
   <question id="9" type="connect"> 
     <clueset>
-		<clue slideid="-1" connection="1" />
-		<clue slideid="-1" connection="2" />
-		<clue slideid="-1" connection="3" />
-		<clue slideid="-1" connection="4" />
-		<clue slideid="-1" connection="5" />
-		<clue slideid="-1" connection="6" />
-		<clue slideid="-1" connection="7" />
-		<clue slideid="-1" connection="8" />
+		<clue slideid="-1" connection="1" points="5" />
+		<clue slideid="-1" connection="2" points="5" />
+		<clue slideid="-1" connection="3" points="5" />
+		<clue slideid="-1" connection="4" points="5" />
+		<clue slideid="-1" connection="5" points="5" />
+		<clue slideid="-1" connection="6" points="5" />
+		<clue slideid="-1" connection="7" points="5" />
+		<clue slideid="-1" connection="8" points="5" />
 	</clueset>
     <answer slideid="9" />
   </question>
