@@ -1,0 +1,4 @@
+bazel-*
+docs/*.log
+docs/*.aux
+src/.vscode/**

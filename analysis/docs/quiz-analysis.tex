@@ -1,0 +1,43 @@
+\documentclass[10pt]{article}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do not modify the dimensions of the page
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.9in}
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\textwidth}{6.0in}
+% Do not modify the dimensions of the page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% No paragraph indent or paragraph skip
+\parindent=10pt
+\parskip=0pt
+
+\begin{document}
+
+\centerline{{\large {\bf Analyzing Fairness of Quizzing Rules}}}
+\vspace{6pt}
+\centerline{{\bf Priyananda Shenoy}}
+\vspace{6pt}
+\centerline{ priyananda@gmail.com }
+\vspace{6pt}
+\centerline{ ABSTRACT }
+
+Most databases today use row-store column layout to physically store the data,
+in spite of results showing the advantages of column-store layout. This is mostly
+due to the seek cost of disk drives imposing a steep penalty on random access,
+which column store relies on. With Solid State drives replacing disk drives
+in database applications, there is a need to re-evaluate the question of
+column layouts. Also, existing databases and evaluations tend to focus on read
+cases, whereas write costs are significant for Solid State disks.
+
+This project reexamines the question of column layout models for Flash based
+databases. We propose a flexible data storage model which partitions attributes
+based on a given workload, taking into account both reads and writes. Based on
+the workload, we find the optimal layout of attributes into groups, each group
+stored in a different page, which minimizes the total cost for that workload.
+We evaluate the performance of this intelligent partitioning against n-ary and
+column storage models.
+
+\end{document}
